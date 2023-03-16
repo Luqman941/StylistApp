@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class NotificationPage extends StatelessWidget {
-  const NotificationPage({Key? key}) : super(key: key);
+class notifications extends StatelessWidget {
+  const notifications({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +77,7 @@ class NotificationPage extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "You Recieved Order",
+                                      "Your Order Conform",
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold),

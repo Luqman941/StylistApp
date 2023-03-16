@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       //home:Profile_Details() ,
       //home:Edit_Profile(),
       // home:Saloon_Mainpage_Container(),
-      home: ChangePassword(),
+      //home: ChangePassword(),
       //home:NotificationPage() ,
     );
   }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:untitled6/your_appointment.dart';
-class reusablecardPage extends StatelessWidget {
-  const reusablecardPage({Key? key}) : super(key: key);
+
+import '../your_appointment.dart';
+
+class timing extends StatelessWidget {
+  const timing({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class reusablecardPage extends StatelessWidget {
               children: [
                 Padding(padding: EdgeInsets.only(left: 15,top: 10,bottom: 10),
                   child: Text(
-                    "Service List",style: TextStyle(
+                    "Enter Open-Closed",style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w500,
                   ),
@@ -37,11 +39,16 @@ class reusablecardPage extends StatelessWidget {
                   thickness: 1,
                   color:  Colors.black,
                 ),
-                reuse(text: "Men's Short Hair Color",texts: "20 min",textd: "\$20.00" ,),
-                reuse(text: "Hair Spa",texts: "25 min",textd: "\$45.00" ,),
-                reuse(text: "Oil Treatment",texts: "15 min",textd: "\$10.00" ,),
+                reuse(text: "Day",texts: "Open",textd: "Closed" ,),
+                reuse(text: "Sunday",texts: "5:00 AM ",textd: "8:00 PM" ,),
+                reuse(text: "Tuesday",texts: "5:00 AM",textd: "8:00 PM" ,),
+                reuse(text: "Wednesday",texts: "5:00 AM",textd: "8:00 PM" ,),
+                reuse(text: "Thursday",texts: "5:00 AM",textd: "8:00 PM" ,),
+                reuse(text: "Friday",texts: "5:00 AM",textd: "8:00 PM" ,),
+                reuse(text: "Saturday",texts: "5:00 AM",textd: "8:00 PM" ,),
               ],
             ),
+
           )
         ],
       ),
