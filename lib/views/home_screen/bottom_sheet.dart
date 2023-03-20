@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:untitled6/updated_page.dart';
+import 'package:untitled6/order_successfully.dart';
 
-import 'order_successfully.dart';
 enum selectedmethod{
   paypal(),
   visacard,
