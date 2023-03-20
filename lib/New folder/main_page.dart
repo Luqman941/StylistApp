@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../saloon_detail_page.dart';
 import 'models/mainpage_topcontainer.dart';
 import 'models/saloondetails_container.dart';
 
@@ -344,7 +345,14 @@ class _Main_pageState extends State<Main_page> {
                                             height: 30,
                                             width: 80,
                                             child: ElevatedButton(
-                                              onPressed: () {},
+                                              onPressed: () {
+                                                Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        SaloondetailPage(),
+                                                  ),
+                                                );
+                                              },
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor:
                                                     const Color(0xffE0C3F6),

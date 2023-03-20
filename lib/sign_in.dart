@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled6/sign_up.dart';
 
+import 'New folder/enable_service_page.dart';
 import 'New folder/forget_password.dart';
 import 'New folder/main_page.dart';
 import 'New folder/widgets/platform_boxes.dart';
@@ -196,7 +197,7 @@ class _Sign_inState extends State<Sign_in> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Main_page(),
+                                builder: (context) => Enable_Service_Page(),
                               ));
                         }
                       },

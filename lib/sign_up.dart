@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:untitled6/sign_in.dart';
 import 'package:untitled6/verification.dart';
 
@@ -151,35 +152,42 @@ class _Sign_upState extends State<Sign_up> {
                   SizedBox(
                     height: 20,
                   ),
-                  TextFormField(
-                    keyboardType: TextInputType.number,
-                    controller: _phonenocontroller,
-                    validator: (num) =>
-                        num!.isEmpty ? "Please Enter Your Number" : null,
+                  // TextFormField(
+                  //   keyboardType: TextInputType.number,
+                  //   controller: _phonenocontroller,
+                  //   validator: (num) =>
+                  //       num!.isEmpty ? "Please Enter Your Number" : null,
+                  //   decoration: InputDecoration(
+                  //     // hintText:"Email",
+                  //     labelText: "Phone Number",
+                  //     labelStyle: TextStyle(
+                  //         color: Colors.black, fontWeight: FontWeight.bold),
+                  //     floatingLabelBehavior: FloatingLabelBehavior.always,
+                  //     border: OutlineInputBorder(
+                  //       borderRadius: BorderRadius.circular(30),
+                  //       borderSide: BorderSide(width: 2, color: Colors.black),
+                  //     ),
+                  //     enabledBorder: OutlineInputBorder(
+                  //       borderRadius: BorderRadius.circular(30),
+                  //       borderSide: BorderSide(width: 2, color: Colors.black),
+                  //     ),
+                  //     focusedBorder: OutlineInputBorder(
+                  //       borderRadius: BorderRadius.circular(30),
+                  //       borderSide: BorderSide(width: 2, color: Colors.black),
+                  //     ),
+                  //     errorBorder: OutlineInputBorder(
+                  //       borderRadius: BorderRadius.circular(30),
+                  //       borderSide:
+                  //           BorderSide(width: 2, color: Colors.redAccent),
+                  //     ),
+                  //   ),
+                  // ),
+                  IntlPhoneField(
+                    showCountryFlag: false,
                     decoration: InputDecoration(
-                      // hintText:"Email",
-                      labelText: "Phone Number",
-                      labelStyle: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: BorderSide(width: 2, color: Colors.black),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: BorderSide(width: 2, color: Colors.black),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: BorderSide(width: 2, color: Colors.black),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide:
-                            BorderSide(width: 2, color: Colors.redAccent),
-                      ),
-                    ),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20))),
+                    disableLengthCheck: true,
                   ),
                   SizedBox(
                     height: 20,

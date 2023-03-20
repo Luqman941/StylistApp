@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:untitled6/New%20folder/saloon_details_about.dart';
 import 'package:untitled6/page.dart';
+import 'package:untitled6/password_changing.dart';
+import 'package:untitled6/photo.dart';
 import 'package:untitled6/privacy_policy.dart';
-import 'package:untitled6/register_owner/fill_details.dart';
-import 'package:untitled6/register_owner/profile.dart';
+import 'package:untitled6/review.dart';
 
 import 'package:untitled6/saloon_detail_page.dart';
 import 'package:untitled6/sign_in.dart';
@@ -14,7 +15,9 @@ import 'package:untitled6/ur_useabl_page.dart';
 import 'package:untitled6/verification.dart';
 import 'package:untitled6/welcome_page.dart';
 import 'package:untitled6/your_appointment.dart';
+import 'package:untitled6/your_location.dart';
 
+import 'Appointment_details.dart';
 import 'New folder/change_password.dart';
 import 'New folder/edit_profile.dart';
 import 'New folder/enable_service_page.dart';
@@ -23,26 +26,18 @@ import 'New folder/forget_password.dart';
 import 'New folder/front_page.dart';
 import 'New folder/main_page.dart';
 import 'New folder/notification_page.dart';
-import 'New folder/open_page.dart';
 import 'New folder/profile_details.dart';
 import 'New folder/profile_spage.dart';
 import 'New folder/saloons_mainpage_container.dart';
+
 import 'about.dart';
+import 'about_ous.dart';
 import 'bookedorder.dart';
+import 'booking_appointment.dart';
 import 'bottom_sheet.dart';
 import 'day.dart';
-import 'order_summary.dart';
-import 'package:untitled6/profile.dart';
-import 'package:untitled6/fill_details.dart';
-import 'register_owner/add_services.dart';
-import 'register_owner/edit_profile.dart';
-import 'register_owner/appointment_details.dart';
-import 'register_owner/appointment_details1.dart';
-import 'register_owner/about_us.dart';
-import 'register_owner/privacy_policy.dart';
-import 'services.dart';
-import 'register_owner/notifications.dart';
 
+import 'order_summary.dart';
 
 void main() {
   runApp(const MyApp());
@@ -60,52 +55,46 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      //home: Open_page(),
-      home: fill_details(),
-      //home: add_services(),
-      //home: edit_profile(),
-      //home:  profile(),
-      //home: appointment_details(),
-      //home: appointment_details1(),
-      //home: about_us(),
-      //home: privacy_policy(),
-      //home: Services(),
-      //home: notifications(),
-
-
-
-
-     // home: page(),
-     // home: front_page(),
+      home: page(),
+      //home: front_page(),
       //home: welcomepage(),
       //home: Sign_in(),
       //home: Sign_up(),
-      // home: Verfication_page(),
+      //home: Verfication_page(),
       //home: Forget_Password(),
       //home: ChangePassword(),
       //home: Enable_Service_Page(),
-      // home: Main_page(),
+      //home: your_location(),
+      //home: Main_page(),
+      //home: SaloondetailPage()
       //home: Profile_Screen(),
-      //home: Edit_Profile(),
-      //home: Favrite_Saloon(),
-      //home: NotificationPage(),
-      //home: ChangePassword(),
-      //home: privacypolicy(),
+      //home: Profile_Details(),
+      //home: photo(),
+      //home: Sign_up(),
+      //home: your_location(),
+      //home: Password_changing(),
 
-      //home: SaloondetailPage(),
+      //home: Favrite_Saloon(),
+      //home: Appointment_detail(),
+      //home: NotificationPage(),
+      //home: privacypolicy(),
+      // home: aboutous(),
+      //home: bookingappointment(),
       // home: Saloon_details_about()
       //home: bookOrderedPage(),
       //home: bottomSheet(),
-       //home: AboutPage(),
+      // home: AboutPage(),
       //home: homePage(),
 
-      // home: Profile_Details(),
-
+      //home: Profile_Details(),
+      // home: Profile_Screen(),
       //home: Saloon_Mainpage_Container(),
+      //home: review(),
 
       //home: YourAppointment(),
       //home: orderSummaryPage(),
       //home: reusablecardPage(),
+      //home: Profile_Screen(),
     );
   }
 }
