@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'enable_service_page.dart';
-import 'favrite_saloons.dart';
-
-class ChangePassword extends StatefulWidget {
-  const ChangePassword({Key? key}) : super(key: key);
+class Password_changing extends StatefulWidget {
+  const Password_changing({Key? key}) : super(key: key);
 
   @override
-  State<ChangePassword> createState() => _ChangePasswordState();
+  State<Password_changing> createState() => _Password_changing();
 }
 
-class _ChangePasswordState extends State<ChangePassword> {
+class _Password_changing extends State<Password_changing> {
   bool isObsecure = true;
 
   TextEditingController _pwdcontroller = TextEditingController();
@@ -248,14 +245,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                                             height: 40,
                                             width: double.infinity,
                                             child: ElevatedButton(
-                                              onPressed: () {
-                                                Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          Enable_Service_Page(),
-                                                    ));
-                                              },
+                                              onPressed: () {},
                                               child: Text("Back to home"),
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor:

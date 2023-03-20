@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:untitled6/New%20folder/profile_spage.dart';
+
+import 'favrite_saloons.dart';
 
 class Edit_Profile extends StatefulWidget {
   Edit_Profile({Key? key}) : super(key: key);
@@ -59,8 +62,7 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                             shape: BoxShape.circle,
                             border: Border.all(width: 2, color: Colors.black),
                             image: DecorationImage(
-                                image:
-                                    AssetImage("assets/images/front_pic.jpeg"),
+                                image: AssetImage("assets/front_pic.jpeg"),
                                 fit: BoxFit.cover),
                           ),
                         ),
@@ -146,30 +148,12 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                     height: 20,
                   ),
                   // Phone Number
-                  TextFormField(
-                    validator: (fno) =>
-                        fno!.isEmpty ? "Please Enter Your Number" : null,
-                    controller: _fnocontroller,
-                    keyboardType: TextInputType.number,
+                  IntlPhoneField(
+                    showCountryFlag: false,
                     decoration: InputDecoration(
-                      labelText: "Phone Number",
-                      labelStyle: TextStyle(color: Colors.black),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide:
-                              BorderSide(width: 2, color: Colors.black)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide:
-                              BorderSide(width: 2, color: Colors.black)),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide:
-                              BorderSide(width: 2, color: Colors.black)),
-                      errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide(width: 2, color: Colors.red)),
-                    ),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20))),
+                    disableLengthCheck: true,
                   ),
                   SizedBox(
                     height: 20,
@@ -242,7 +226,7 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Profile_Screen(),
+                                builder: (context) => Favrite_Saloon(),
                               ));
                         }
                       },
@@ -252,7 +236,7 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xff61C0BF),
+                          backgroundColor: Color(0xff4D9DD0),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30)),
                           side: BorderSide(width: 2, color: Colors.black)),

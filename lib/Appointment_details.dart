@@ -1,17 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'models/saloondetails_container.dart';
-import 'notification_page.dart';
+import 'New folder/favrite_saloons.dart';
+import 'New folder/models/saloondetails_container.dart';
 
-class Favrite_Saloon extends StatefulWidget {
-  const Favrite_Saloon({Key? key}) : super(key: key);
+class Appointment_detail extends StatefulWidget {
+  const Appointment_detail({Key? key}) : super(key: key);
 
   @override
-  State<Favrite_Saloon> createState() => _Favrite_SaloonState();
+  State<Appointment_detail> createState() => _Appointment_detailState();
 }
 
-class _Favrite_SaloonState extends State<Favrite_Saloon> {
+class _Appointment_detailState extends State<Appointment_detail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +27,7 @@ class _Favrite_SaloonState extends State<Favrite_Saloon> {
               color: Colors.black,
             )),
         title: const Text(
-          "Favrite Saloons",
+          "Appointment Details",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,

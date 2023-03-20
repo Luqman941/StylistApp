@@ -6,7 +6,6 @@ import 'favrite_saloons.dart';
 import 'forget_password.dart';
 import 'front_page.dart';
 import 'main_page.dart';
-import 'open_page.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled6/New%20folder/saloon_page_images_container/bottom_navigation_bar.dart';
+import 'package:untitled6/your_location.dart';
 
 class Enable_Service_Page extends StatelessWidget {
   const Enable_Service_Page({Key? key}) : super(key: key);
@@ -60,6 +61,35 @@ class Enable_Service_Page extends StatelessWidget {
                     child: Center(
                         child: Text(
                       "Allow Location Access",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 15),
+                    )),
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => your_location()));
+                  },
+                  child: Container(
+                    height: 50,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Color(
+                          0xff61C0BF,
+                        ),
+                        border: Border.all(width: 2, color: Colors.black)),
+                    child: Center(
+                        child: Text(
+                      "Enter Location",
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,

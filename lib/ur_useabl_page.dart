@@ -39,7 +39,8 @@ class reusablecardPage extends StatelessWidget {
                 ),
                 reuse(text: "Men's Short Hair Color",texts: "20 min",textd: "\$20.00" ,),
                 reuse(text: "Hair Spa",texts: "25 min",textd: "\$45.00" ,),
-                reuse(text: "Oil Treatment",texts: "15 min",textd: "\$10.00" ,),
+                reuse(text: "CGST",textd: "\$02.00" ,),
+                reuse(text: "SGST",textd: "\$02.00" ,),
               ],
             ),
           )

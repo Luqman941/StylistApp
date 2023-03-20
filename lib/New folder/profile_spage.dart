@@ -1,11 +1,27 @@
 //import 'package:afaq/profile_model/profile_weidgets.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled6/New%20folder/profile_details.dart';
 
+import '../Appointment_details.dart';
+import '../about_ous.dart';
+import '../password_changing.dart';
+import '../privacy_policy.dart';
+import '../welcome_page.dart';
+import '../your_appointment.dart';
+import 'change_password.dart';
+import 'edit_profile.dart';
+import 'favrite_saloons.dart';
 import 'models/profile_weidgets.dart';
+import 'notification_page.dart';
 
-class Profile_Screen extends StatelessWidget {
+class Profile_Screen extends StatefulWidget {
   Profile_Screen({Key? key}) : super(key: key);
 
+  @override
+  State<Profile_Screen> createState() => _Profile_ScreenState();
+}
+
+class _Profile_ScreenState extends State<Profile_Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +46,7 @@ class Profile_Screen extends StatelessWidget {
                               shape: BoxShape.circle,
                               border: Border.all(width: 2, color: Colors.black),
                               image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/images/front_pic.jpeg"),
+                                  image: AssetImage("assets/front_pic.jpeg"),
                                   fit: BoxFit.cover),
                             ),
                           ),
@@ -116,7 +131,13 @@ class Profile_Screen extends StatelessWidget {
                           ),
                           Spacer(),
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Model[index].myClass,
+                                  ));
+                            },
                             icon: Icon(
                               Icons.arrow_forward_ios_sharp,
                               color: Colors.black,
@@ -137,6 +158,7 @@ class Profile_Screen extends StatelessWidget {
 
   List<dynamic> Model = [
     ProfileScreen(
+        myClass: Profile_Details(),
         my: "My Profile",
         icon: Icon(
           Icons.person,
@@ -144,27 +166,23 @@ class Profile_Screen extends StatelessWidget {
         ),
         color: Color(0xff61C0BF)),
     ProfileScreen(
-        my: "Payment Method",
-        icon: Icon(
-          Icons.wallet_outlined,
-          color: Colors.black,
-        ),
-        color: Color(0xffE0C3F6)),
-    ProfileScreen(
-        my: "Booking History",
+        myClass: Appointment_detail(),
+        my: "Appointment details",
         icon: Icon(
           Icons.bookmark_border,
           color: Colors.black,
         ),
         color: Color(0xffFCC5B3)),
     ProfileScreen(
-        my: "Favrite Sallon",
+        my: "Favorite's Saloon",
         icon: Icon(
           Icons.favorite_border,
           color: Colors.black,
         ),
-        color: Color(0xff61C0BF)),
+        color: Color(0xff61C0BF),
+        myClass: Favrite_Saloon()),
     ProfileScreen(
+        myClass: NotificationPage(),
         my: "Get Notificaton",
         icon: Icon(
           Icons.notifications_outlined,
@@ -172,6 +190,7 @@ class Profile_Screen extends StatelessWidget {
         ),
         color: Color(0xffE0C3F6)),
     ProfileScreen(
+        myClass: Password_changing(),
         my: "Change Password",
         icon: Icon(
           Icons.lock_outline_sharp,
@@ -179,6 +198,7 @@ class Profile_Screen extends StatelessWidget {
         ),
         color: Color(0xffFCC5B3)),
     ProfileScreen(
+        myClass: privacypolicy(),
         my: "Privacy Policy",
         icon: Icon(
           Icons.privacy_tip_outlined,
@@ -186,6 +206,7 @@ class Profile_Screen extends StatelessWidget {
         ),
         color: Color(0xff61C0BF)),
     ProfileScreen(
+        myClass: aboutous(),
         my: "About Us",
         icon: Icon(
           Icons.info_outline_rounded,
@@ -193,6 +214,7 @@ class Profile_Screen extends StatelessWidget {
         ),
         color: Color(0xffE0C3F6)),
     ProfileScreen(
+        myClass: welcomepage(),
         my: "Log Out",
         icon: Icon(
           Icons.login,

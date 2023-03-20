@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../sign_in.dart';
+import 'change_password.dart';
 
 class Forget_Password extends StatelessWidget {
   const Forget_Password({Key? key}) : super(key: key);
@@ -111,7 +112,13 @@ class Forget_Password extends StatelessWidget {
                     color: Color(0xff4D9DD0),
                     border: Border.all(width: 2, color: Colors.black)),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => ChangePassword(),
+                      ),
+                    );
+                  },
                   child: Text(
                     "Continue",
                     style: TextStyle(
