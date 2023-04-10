@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:untitled6/New%20folder/profile_spage.dart';
+import 'package:untitled6/views/customer/profile_page.dart';
 
 //import '../../welcome_page.dart';
-import '../favrite_saloons.dart';
-import '../main_page.dart';
-import '../notification_page.dart';
+import '../../views/customer/favorite_saloons.dart';
+import '../../views/customer/main_page.dart';
+import '../../views/notification_page.dart';
 
 class Bottom extends StatefulWidget {
   const Bottom({Key? key}) : super(key: key);
@@ -16,10 +16,10 @@ class Bottom extends StatefulWidget {
 class _BottomState extends State<Bottom> {
   int _selectedIndex = 0;
   final List screen = [
-    Main_page(),
-    Favrite_Saloon(),
+    MainPage(),
+    FavoriteSaloon(),
     NotificationPage(),
-    Profile_Screen(),
+    ProfilePage(),
   ];
 
   @override

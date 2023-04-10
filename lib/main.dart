@@ -1,43 +1,48 @@
 import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled6/New%20folder/saloon_details_about.dart';
-import 'package:untitled6/page.dart';
-import 'package:untitled6/password_changing.dart';
-import 'package:untitled6/photo.dart';
-import 'package:untitled6/privacy_policy.dart';
-import 'package:untitled6/review.dart';
 
-import 'package:untitled6/saloon_detail_page.dart';
-import 'package:untitled6/sign_in.dart';
-import 'package:untitled6/sign_up.dart';
-import 'package:untitled6/ur_useabl_page.dart';
-import 'package:untitled6/verification.dart';
-import 'package:untitled6/welcome_page.dart';
-import 'package:untitled6/your_appointment.dart';
-import 'package:untitled6/your_location.dart';
+import 'package:untitled6/views/splash_screen.dart';
+import 'package:untitled6/views/customer/date_time_page.dart';
+import 'package:untitled6/views/owner/customer_appointments.dart';
+import 'package:untitled6/views/owner/customer_appointment_details.dart';
+import 'open_page.dart';
+import 'views/customer/order_successfully_completed.dart';
+import 'views/auth/change_password.dart';
+import 'package:untitled6/views/customer/portfolio_pictures.dart';
+import 'views/owner/edit_profile.dart';
+import 'views/privacy_policy.dart';
+import 'package:untitled6/views/review.dart';
 
-import 'Appointment_details.dart';
-import 'New folder/change_password.dart';
-import 'New folder/edit_profile.dart';
-import 'New folder/enable_service_page.dart';
-import 'New folder/favrite_saloons.dart';
-import 'New folder/forget_password.dart';
-import 'New folder/front_page.dart';
-import 'New folder/main_page.dart';
-import 'New folder/notification_page.dart';
-import 'New folder/profile_details.dart';
-import 'New folder/profile_spage.dart';
-import 'New folder/saloons_mainpage_container.dart';
+import 'package:untitled6/views/customer/saloon_detail.dart';
+import 'package:untitled6/views/auth/sign_in.dart';
+import 'package:untitled6/views/auth/sign_up.dart';
+import 'package:untitled6/New%20folder/reusable_card_page.dart';
+import 'package:untitled6/views/auth/verification.dart';
+import 'package:untitled6/views/welcome_page.dart';
+import 'package:untitled6/views/customer/2_your_appointment.dart';
+import 'package:untitled6/views/auth/your_location.dart';
 
-import 'about.dart';
-import 'about_ous.dart';
-import 'bookedorder.dart';
-import 'booking_appointment.dart';
-import 'bottom_sheet.dart';
+import 'views/customer/1_appointment_details.dart';
+import 'views/auth/change_password.dart';
+import 'views/auth/enable_location_service.dart';
+import 'views/customer/favorite_saloons.dart';
+import 'views/auth/forget_password.dart';
+import 'views/first_pages.dart';
+import 'views/customer/main_page.dart';
+import 'views/notification_page.dart';
+import 'views/profile_details.dart';
+import 'views/customer/profile_page.dart';
+import 'New folder/saloon_mainpage_container.dart';
+
+import 'views/customer/about_barbershop.dart';
+import 'views/about_us.dart';
+import 'views/customer/order_booking.dart';
+import 'views/customer/book_appointment.dart';
+import 'views/customer/payment_method.dart';
 import 'day.dart';
 
-import 'order_summary.dart';
+import 'views/customer/order_summary.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,244 +60,66 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: page(),
-      //home: front_page(),
-      //home: welcomepage(),
-      //home: Sign_in(),
-      //home: Sign_up(),
-      //home: Verfication_page(),
-      //home: Forget_Password(),
-      //home: ChangePassword(),
-      //home: Enable_Service_Page(),
-      //home: your_location(),
-      //home: Main_page(),
-      //home: SaloondetailPage()
-      //home: Profile_Screen(),
-      //home: Profile_Details(),
-      //home: photo(),
-      //home: Sign_up(),
-      //home: your_location(),
-      //home: Password_changing(),
 
-      //home: Favrite_Saloon(),
-      //home: Appointment_detail(),
-      //home: NotificationPage(),
-      //home: privacypolicy(),
-      // home: aboutous(),
-      //home: bookingappointment(),
-      // home: Saloon_details_about()
-      //home: bookOrderedPage(),
-      //home: bottomSheet(),
-      // home: AboutPage(),
-      //home: homePage(),
+      // home:Open_page(),
+      // home: FirstPage(),
+      // home: FrontPage(),
+      // home: ProfilePage(),
+      // home: WelcomePage(),
+      // home: Sign_in(),
+      // home: Sign_up(),
+      // home: VerificationPage(),
+      // home: ForgetPassword(),
+      // home: ChangePassword(),
+      // home: EnableLocationService(),
+      // home: YourLocation(),
 
-      //home: Profile_Details(),
+      // home: MainPage(),
+      // home: SaloonDetail(),
+      // home: ProfileDetails(),
+      // home: photo(),
+      // home: YourLocation(),
+      // home: ChangePassword(),
+      // home: ProfilePage(),
+
+      //-------------------MenuBar options for customer-----------------
+      // home: FavoriteSaloon(),
+      // home: NotificationPage(),      //for owner & customer
+      // home: Appointment_detail(),
+      // home: PrivacyPolicy(),
+      // home: AboutUs(),
+      // home: BookAppointment(),
+
+      // home: OrderBooking(),
+      // home: PaymentMethod(),
+      // home: AboutBarberShop(),
+      // home: DateTimePage(),
+
+      // home: ProfileDetails(),
       // home: Profile_Screen(),
-      //home: Saloon_Mainpage_Container(),
-      //home: review(),
+      // home: review(),
 
-      //home: YourAppointment(),
-      //home: orderSummaryPage(),
-      //home: reusablecardPage(),
-      //home: Profile_Screen(),
-    );
-  }
-}
+      // home: Saloon_Mainpage_Container(),
 
-class homePage extends StatefulWidget {
-  const homePage({Key? key}) : super(key: key);
+      // home: YourAppointment(),
 
-  @override
-  State<homePage> createState() => _homePageState();
-}
+      // home: OrderSummary(),
+      // home: ReusableCardPage(),
+      // home: Profile_Screen(),
 
-class _homePageState extends State<homePage> {
-  handleChange(DateTime date) {
-    print(date);
-  }
+      //-------- Owner----------
+      // home: CustomerAppointmentDetails(),
+      // home: CustomerAppointments(),
 
-  DatePickerController _controller = DatePickerController();
+      // home: AppointmentDetails(),
+      // home: FavoriteSaloon(),
+      // home: OrderSuccessfullyCompleted(),
+      // home: PortfolioPictures(),
+      // home:  Reviews(),
 
-  DateTime _selectedValue = DateTime.now();
+      //----------- En mei error hai--------------
 
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.only(left: 15, right: 15),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    Icons.arrow_back_ios_new,
-                    size: 20,
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
-                    "Select Date & Time",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    height: 35,
-                    width: 35,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.black, width: 1)),
-                    child: const Center(
-                      child: Icon(
-                        Icons.arrow_back_ios_new,
-                        size: 20,
-                      ),
-                    ),
-                  ),
-                  Text(
-                    "Auguet 2022",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black54),
-                  ),
-                  Container(
-                    height: 35,
-                    width: 35,
-                    decoration: BoxDecoration(
-                        color: Colors.purple.withOpacity(.3),
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.black, width: 1)),
-                    child: Center(
-                      child: Icon(
-                        Icons.arrow_forward_ios,
-                        size: 20,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                height: 100,
-                child: DatePicker(
-                  DateTime.now(),
-                  width: 60,
-                  height: 80,
-                  controller: _controller,
-                  initialSelectedDate: DateTime.now(),
-                  selectionColor: Colors.purple.withOpacity(.3),
-                  selectedTextColor: Colors.white,
-                  onDateChange: (date) {
-                    // New date selected
-                    setState(() {
-                      _selectedValue = date;
-                    });
-                  },
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Divider(
-                indent: 10,
-                endIndent: 10,
-                color: Colors.black12,
-                thickness: 1,
-              ),
-              Row(
-                children: [
-                  Text(
-                    "Time",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Spacer(),
-                  Container(
-                    height: 8,
-                    width: 8,
-                    decoration: BoxDecoration(
-                      color: Colors.purple.withOpacity(.3),
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(color: Colors.black, width: 1),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text(
-                    "Available",
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Container(
-                    height: 8,
-                    width: 8,
-                    decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(.3),
-                      borderRadius: BorderRadius.circular(5),
-                      //border: Border.all(color: Colors.black,width: 1),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text(
-                    "Booked",
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black54),
-                  )
-                ],
-              ),
-              Spacer(),
-              GestureDetector(
-                  onTap: () {
-                    Get.to(YourAppointment());
-                  },
-                  child: Container(
-                    height: 50,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.blue.withOpacity(.5),
-                        border: Border.all(color: Colors.black, width: 1)),
-                    child: Center(
-                      child: Text(
-                        "Continue",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white),
-                      ),
-                    ),
-                  )),
-            ],
-          ),
-        ),
-      ),
+      // home: Services(),
     );
   }
 }

@@ -1,16 +1,14 @@
 // import 'package:flutter/cupertino.dart';
 // import 'package:flutter/material.dart';
-// // import 'package:jiffy/jiffy.dart';
-
+//
 // class Day extends StatelessWidget {
 //   final DateTime date;
-
+//
 //   Day(this.date);
-
+//
 //   @override
 //   Widget build(BuildContext context) {
-//     // Jiffy day = Jiffy(date);
-
+//
 //     return Container(
 //       decoration: BoxDecoration(
 //       border: Border.all(color: Color(0xFF000000)),

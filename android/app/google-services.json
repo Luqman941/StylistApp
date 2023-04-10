@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "717587561911",
+    "project_id": "stylist-app-5f2eb",
+    "storage_bucket": "stylist-app-5f2eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717587561911:android:37dc3f12d4c96a200f3c32",
+        "android_client_info": {
+          "package_name": "com.stylist.stylist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717587561911-7nrdcudv2ptd0971f4ts9m6gm6nck1nf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlAH2GDo8xoPjKCPBEGiM_OSJSdRVx98M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717587561911-7nrdcudv2ptd0971f4ts9m6gm6nck1nf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
