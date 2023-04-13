@@ -6,6 +6,7 @@ import 'package:untitled6/views/splash_screen.dart';
 import 'package:untitled6/views/customer/date_time_page.dart';
 import 'package:untitled6/views/owner/customer_appointments.dart';
 import 'package:untitled6/views/owner/customer_appointment_details.dart';
+import 'controller/sign_in_controller.dart';
 import 'open_page.dart';
 import 'views/customer/order_successfully_completed.dart';
 import 'views/auth/change_password.dart';
@@ -44,8 +45,13 @@ import 'day.dart';
 
 import 'views/customer/order_summary.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'package:firebase_core/firebase_core.dart';
+
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -55,10 +61,15 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
+final navigatorKey = GlobalKey<NavigatorState>();
+
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+
+      navigatorKey: navigatorKey, //It is used in signIn
+
       debugShowCheckedModeBanner: false,
 
       // home:Open_page(),
@@ -66,7 +77,9 @@ class _MyAppState extends State<MyApp> {
       // home: FrontPage(),
       // home: ProfilePage(),
       // home: WelcomePage(),
-      // home: Sign_in(),
+
+      home:  SignInController(),//Sign_in(),
+
       // home: Sign_up(),
       // home: VerificationPage(),
       // home: ForgetPassword(),
@@ -118,7 +131,6 @@ class _MyAppState extends State<MyApp> {
       // home:  Reviews(),
 
       //----------- En mei error hai--------------
-
       // home: Services(),
     );
   }

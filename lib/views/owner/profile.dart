@@ -131,7 +131,7 @@ class Profile extends StatelessWidget {
                             width: 10,
                           ),
                           Text(
-                            Model[index].my,
+                            Model[index].myText,
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold),
@@ -159,56 +159,56 @@ class Profile extends StatelessWidget {
 
   List<dynamic> Model = [
     ProfileScreen(
-        my: "My Profile",
+        myText: "My Profile",
         icon: Icon(
           Icons.person,
           color: Colors.black,
         ),
         color: Color(0xff61C0BF)),
     ProfileScreen(
-        my: "Appointment details",
+        myText: "Appointment details",
         icon: Icon(
           Icons.wallet_outlined,
           color: Colors.black,
         ),
         color: Color(0xffE0C3F6)),
     ProfileScreen(
-        my: "Add Services",
+        myText: "Add Services",
         icon: Icon(
           Icons.bookmark_border,
           color: Colors.black,
         ),
         color: Color(0xffFCC5B3)),
     ProfileScreen(
-        my: "Get Notificaton",
+        myText: "Get Notificaton",
         icon: Icon(
           Icons.notifications_outlined,
           color: Colors.black,
         ),
         color: Color(0xffE0C3F6)),
     ProfileScreen(
-        my: "Change Password",
+        myText: "Change Password",
         icon: Icon(
           Icons.lock_outline_sharp,
           color: Colors.black,
         ),
         color: Color(0xffFCC5B3)),
     ProfileScreen(
-        my: "Privacy Policy",
+        myText: "Privacy Policy",
         icon: Icon(
           Icons.privacy_tip_outlined,
           color: Colors.black,
         ),
         color: Color(0xff61C0BF)),
     ProfileScreen(
-        my: "About Us",
+        myText: "About Us",
         icon: Icon(
           Icons.info_outline_rounded,
           color: Colors.black,
         ),
         color: Color(0xffE0C3F6)),
     ProfileScreen(
-        my: "Log Out",
+        myText: "Log Out",
         icon: Icon(
           Icons.login,
           color: Colors.black,

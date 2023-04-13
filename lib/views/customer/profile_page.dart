@@ -1,12 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled6/views/profile_details.dart';
 
+import '../../controller/sign_in_controller.dart';
+import '../auth/sign_in.dart';
+import '../welcome_page.dart';
 import '1_appointment_details.dart';
 import '../about_us.dart';
 import 'package:untitled6/views/auth/change_password.dart';
 
 import 'package:untitled6/views/privacy_policy.dart';
-import '../welcome_page.dart';
 import '2_your_appointment.dart';
 import '../auth/change_password.dart';
 import 'favorite_saloons.dart';
@@ -23,6 +26,8 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!; //Access user from firebase
+
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
@@ -84,7 +89,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         height: 7,
                       ),
                       Text(
-                        "AfaqAhmad@gmail.com",
+                        user.email!,  //Email from firebase
                         style: TextStyle(
                             color: Colors.grey,
                             fontWeight: FontWeight.bold,
@@ -102,7 +107,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: ListView.builder(
                       physics: BouncingScrollPhysics(),
                       scrollDirection: Axis.vertical,
-                      itemCount: Model.length,
+                      itemCount: model.length,
                       itemBuilder: (context, index) => Row(
                         children: [
                           Padding(
@@ -112,10 +117,10 @@ class _ProfilePageState extends State<ProfilePage> {
                               width: 40,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Model[index].color,
+                                color: model[index].color,
                               ),
                               child: Center(
-                                child: Model[index].icon,
+                                child: model[index].icon,
                               ),
                             ),
                           ),
@@ -123,7 +128,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             width: 10,
                           ),
                           Text(
-                            Model[index].my,
+                            model[index].myText,
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold),
@@ -134,8 +139,12 @@ class _ProfilePageState extends State<ProfilePage> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Model[index].myClass,
+                                    builder: (context) => model[index].myClass,
                                   ));
+
+                              if(model[index].myText == "Log Out"){
+                                FirebaseAuth.instance.signOut();
+                              }
                             },
                             icon: Icon(
                               Icons.arrow_forward_ios_sharp,
@@ -155,10 +164,10 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  List<dynamic> Model = [
+  List<dynamic> model = [
     ProfileScreen(
         myClass: ProfileDetails(),
-        my: "My Profile",
+        myText: "My Profile",
         icon: Icon(
           Icons.person,
           color: Colors.black,
@@ -166,14 +175,14 @@ class _ProfilePageState extends State<ProfilePage> {
         color: Color(0xff61C0BF)),
     ProfileScreen(
         myClass: AppointmentDetails(),
-        my: "Appointment details",
+        myText: "Appointment details",
         icon: Icon(
           Icons.bookmark_border,
           color: Colors.black,
         ),
         color: Color(0xffFCC5B3)),
     ProfileScreen(
-        my: "Favorite's Saloon",
+        myText: "Favorite's Saloon",
         icon: Icon(
           Icons.favorite_border,
           color: Colors.black,
@@ -182,7 +191,7 @@ class _ProfilePageState extends State<ProfilePage> {
         myClass: FavoriteSaloon()),
     ProfileScreen(
         myClass: NotificationPage(),
-        my: "Get Notificaton",
+        myText: "Get Notificaton",
         icon: Icon(
           Icons.notifications_outlined,
           color: Colors.black,
@@ -190,7 +199,7 @@ class _ProfilePageState extends State<ProfilePage> {
         color: Color(0xffE0C3F6)),
     ProfileScreen(
         myClass: ChangePassword(),
-        my: "Change Password",
+        myText: "Change Password",
         icon: Icon(
           Icons.lock_outline_sharp,
           color: Colors.black,
@@ -198,7 +207,7 @@ class _ProfilePageState extends State<ProfilePage> {
         color: Color(0xffFCC5B3)),
     ProfileScreen(
         myClass: PrivacyPolicy(),
-        my: "Privacy Policy",
+        myText: "Privacy Policy",
         icon: Icon(
           Icons.privacy_tip_outlined,
           color: Colors.black,
@@ -206,19 +215,20 @@ class _ProfilePageState extends State<ProfilePage> {
         color: Color(0xff61C0BF)),
     ProfileScreen(
         myClass: AboutUs(),
-        my: "About Us",
+        myText: "About Us",
         icon: Icon(
           Icons.info_outline_rounded,
           color: Colors.black,
         ),
         color: Color(0xffE0C3F6)),
     ProfileScreen(
-        myClass: WelcomePage(),
-        my: "Log Out",
+        myClass: SignInController(),
+        myText: "Log Out",
         icon: Icon(
           Icons.login,
           color: Colors.black,
         ),
-        color: Color(0xffFCC5B3)),
+        color: Color(0xffFCC5B3)
+   ),
   ];
 }
