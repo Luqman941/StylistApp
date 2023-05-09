@@ -14,7 +14,7 @@ class _BookAppointmentState extends State<BookAppointment>
   late TabController controller;
   @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
     controller = TabController(length: 3, vsync: this);
   }
@@ -98,7 +98,7 @@ class _BookAppointmentState extends State<BookAppointment>
                                               BorderRadius.circular(12),
                                           image: const DecorationImage(
                                               image: AssetImage(
-                                                  "assets/favoriteSaloon.png"),
+                                                  "assets/favoriteSalon.png"),
                                               fit: BoxFit.cover),
                                           border: Border.all(
                                               width: 2, color: Colors.black),
@@ -210,7 +210,7 @@ class _BookAppointmentState extends State<BookAppointment>
                                                     BorderRadius.circular(12),
                                                 image: const DecorationImage(
                                                     image: AssetImage(
-                                                        "assets/favoriteSaloon.png"),
+                                                        "assets/favoriteSalon.png"),
                                                     fit: BoxFit.cover),
                                                 border: Border.all(
                                                     width: 2,
@@ -368,7 +368,7 @@ class _BookAppointmentState extends State<BookAppointment>
                                                               12),
                                                       image: const DecorationImage(
                                                           image: AssetImage(
-                                                              "assets/favoriteSaloon.png"),
+                                                              "assets/favoriteSalon.png"),
                                                           fit: BoxFit.cover),
                                                       border: Border.all(
                                                           width: 2,
@@ -505,7 +505,7 @@ class _BookAppointmentState extends State<BookAppointment>
                                                                         12),
                                                             image: const DecorationImage(
                                                                 image: AssetImage(
-                                                                    "assets/favoriteSaloon.png"),
+                                                                    "assets/favoriteSalon.png"),
                                                                 fit: BoxFit
                                                                     .cover),
                                                             border: Border.all(
@@ -656,7 +656,7 @@ class _BookAppointmentState extends State<BookAppointment>
                                               BorderRadius.circular(12),
                                           image: const DecorationImage(
                                               image: AssetImage(
-                                                  "assets/favoriteSaloon.png"),
+                                                  "assets/favoriteSalon.png"),
                                               fit: BoxFit.cover),
                                           border: Border.all(
                                               width: 2, color: Colors.black),
@@ -768,7 +768,7 @@ class _BookAppointmentState extends State<BookAppointment>
                                                     BorderRadius.circular(12),
                                                 image: const DecorationImage(
                                                     image: AssetImage(
-                                                        "assets/favoriteSaloon.png"),
+                                                        "assets/favoriteSalon.png"),
                                                     fit: BoxFit.cover),
                                                 border: Border.all(
                                                     width: 2,
@@ -894,7 +894,7 @@ class _BookAppointmentState extends State<BookAppointment>
                                                               12),
                                                       image: const DecorationImage(
                                                           image: AssetImage(
-                                                              "assets/favoriteSaloon.png"),
+                                                              "assets/favoriteSalon.png"),
                                                           fit: BoxFit.cover),
                                                       border: Border.all(
                                                           width: 2,
@@ -1032,7 +1032,7 @@ class _BookAppointmentState extends State<BookAppointment>
                                                                         12),
                                                             image: const DecorationImage(
                                                                 image: AssetImage(
-                                                                    "assets/favoriteSaloon.png"),
+                                                                    "assets/favoriteSalon.png"),
                                                                 fit: BoxFit
                                                                     .cover),
                                                             border: Border.all(
@@ -1264,7 +1264,7 @@ class _BookAppointmentState extends State<BookAppointment>
                                                 BorderRadius.circular(12),
                                             image: const DecorationImage(
                                                 image: AssetImage(
-                                                    "assets/favoriteSaloon.png"),
+                                                    "assets/favoriteSalon.png"),
                                                 fit: BoxFit.cover),
                                             border: Border.all(
                                                 width: 2, color: Colors.black),
@@ -1413,7 +1413,7 @@ class _BookAppointmentState extends State<BookAppointment>
                                                       BorderRadius.circular(12),
                                                   image: const DecorationImage(
                                                       image: AssetImage(
-                                                          "assets/favoriteSaloon.png"),
+                                                          "assets/favoriteSalon.png"),
                                                       fit: BoxFit.cover),
                                                   border: Border.all(
                                                       width: 2,
@@ -1574,7 +1574,7 @@ class _BookAppointmentState extends State<BookAppointment>
                                                                 .circular(12),
                                                         image: const DecorationImage(
                                                             image: AssetImage(
-                                                                "assets/favoriteSaloon.png"),
+                                                                "assets/favoriteSalon.png"),
                                                             fit: BoxFit.cover),
                                                         border: Border.all(
                                                             width: 2,
@@ -1748,7 +1748,7 @@ class _BookAppointmentState extends State<BookAppointment>
                                                                           12),
                                                               image: const DecorationImage(
                                                                   image: AssetImage(
-                                                                      "assets/favoriteSaloon.png"),
+                                                                      "assets/favoriteSalon.png"),
                                                                   fit: BoxFit
                                                                       .cover),
                                                               border: Border.all(

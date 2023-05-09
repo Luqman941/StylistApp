@@ -1,18 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled6/views/profile_details.dart';
+import 'package:untitled6/views/my_profile.dart';
 
 import '../../controller/sign_in_controller.dart';
-import '../auth/sign_in.dart';
-import '../welcome_page.dart';
-import '1_appointment_details.dart';
+import '../auth/forgot_password.dart';
+import '1_My_appointments.dart';
 import '../about_us.dart';
-import 'package:untitled6/views/auth/change_password.dart';
 
 import 'package:untitled6/views/privacy_policy.dart';
-import '2_your_appointment.dart';
-import '../auth/change_password.dart';
-import 'favorite_saloons.dart';
+import '3_appointment_details.dart';
+import 'favorite_salons.dart';
 import 'package:untitled6/models/profile_screen.dart';
 import '../notification_page.dart';
 
@@ -166,7 +163,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
   List<dynamic> model = [
     ProfileScreen(
-        myClass: ProfileDetails(),
+        myClass: MyProfile(),
         myText: "My Profile",
         icon: Icon(
           Icons.person,
@@ -174,7 +171,7 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
         color: Color(0xff61C0BF)),
     ProfileScreen(
-        myClass: AppointmentDetails(),
+        myClass: MyAppointments(),
         myText: "Appointment details",
         icon: Icon(
           Icons.bookmark_border,
@@ -182,23 +179,23 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
         color: Color(0xffFCC5B3)),
     ProfileScreen(
-        myText: "Favorite's Saloon",
+        myClass: FavoriteSalon(),
+        myText: "Favorite Saloons",
         icon: Icon(
           Icons.favorite_border,
           color: Colors.black,
         ),
-        color: Color(0xff61C0BF),
-        myClass: FavoriteSaloon()),
+        color: Color(0xff61C0BF)),
     ProfileScreen(
         myClass: NotificationPage(),
-        myText: "Get Notificaton",
+        myText: "Notificatons",
         icon: Icon(
           Icons.notifications_outlined,
           color: Colors.black,
         ),
         color: Color(0xffE0C3F6)),
     ProfileScreen(
-        myClass: ChangePassword(),
+        myClass: ForgotPassword(),
         myText: "Change Password",
         icon: Icon(
           Icons.lock_outline_sharp,

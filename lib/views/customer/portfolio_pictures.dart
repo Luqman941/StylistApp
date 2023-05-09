@@ -9,12 +9,12 @@ class PortfolioPictures extends StatefulWidget {
 
 class _PortfolioPicturesState extends State<PortfolioPictures> {
   List items = [
-    'assets/favoriteSaloon.png',
-    'assets/favoriteSaloon.png',
-    'assets/favoriteSaloon.png',
-    'assets/favoriteSaloon.png',
-    'assets/favoriteSaloon.png',
-    'assets/favoriteSaloon.png',
+    'assets/favoriteSalon.png',
+    'assets/favoriteSalon.png',
+    'assets/favoriteSalon.png',
+    'assets/favoriteSalon.png',
+    'assets/favoriteSalon.png',
+    'assets/favoriteSalon.png',
   ];
   @override
   Widget build(BuildContext context) {

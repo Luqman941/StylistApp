@@ -1,9 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'saloon_detail.dart';
+import '../navbar.dart';
+import 'salon_detail.dart';
 import 'package:untitled6/models/mainpage_topcontainer.dart';
-import 'package:untitled6/models/saloondetails_container.dart';
+import 'package:untitled6/models/salon_details_container.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -17,9 +18,14 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
+      drawer: const NavBar(),
+      appBar: AppBar(
+        title: Padding(
+          padding: EdgeInsets.only(left: 100),
+          child: Text('Stylist'),
+        ),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -28,9 +34,10 @@ class _MainPageState extends State<MainPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Custom Appbar
-                Row(
-                  children: [
+                // Custom Bar
+                Padding(
+                  padding: EdgeInsets.all(15),
+                  child: Row(children: [
                     Container(
                       height: 40,
                       width: 40,
@@ -40,35 +47,20 @@ class _MainPageState extends State<MainPage> {
                               fit: BoxFit.cover),
                           border: Border.all(width: 1, color: Colors.black),
                           shape: BoxShape.circle),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Align(
-                          alignment: Alignment.topLeft,
-                          child: GestureDetector(
-                            onTap: () {},
-                            child: Icon(
-                              Icons.favorite,
-                              size: 15,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
                     ),
                     SizedBox(
                       width: 15,
                     ),
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      //mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          " Afaq habib",
-                          style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
-                        ),
-                        Row(
-                          children: [
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            " Afaq Habib",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Row(children: [
                             Icon(
                               Icons.location_on_outlined,
                               size: 15,
@@ -78,33 +70,12 @@ class _MainPageState extends State<MainPage> {
                               style:
                                   TextStyle(color: Colors.grey, fontSize: 12),
                             ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Spacer(),
-                    Container(
-                      height: 35,
-                      width: 45,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.horizontal(
-                              left: Radius.circular(15),
-                              right: Radius.circular(15)),
-                          border: Border.all(width: 1, color: Colors.black)),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.notifications_active_outlined,
-                          size: 18,
-                        ),
-                      ),
-                    ),
-                  ],
+                          ]),
+                        ]),
+                  ]),
                 ),
+
                 // Search Containor
-                SizedBox(
-                  height: 20,
-                ),
                 Container(
                     height: 50,
                     width: double.infinity,
@@ -117,21 +88,21 @@ class _MainPageState extends State<MainPage> {
                             onPressed: () {}, icon: Icon(Icons.search_sharp)),
                         hintText: "Search",
                         border: InputBorder.none,
-                        suffixIcon: Padding(
-                          padding: const EdgeInsets.all(3.0),
-                          child: Container(
-                            height: 27,
-                            width: 27,
-                            decoration: BoxDecoration(
-                              color: Color(0xff61C0BF),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.location_searching_rounded,
-                              size: 25,
-                            ),
-                          ),
-                        ),
+                        // suffixIcon: Padding(
+                        //   padding: const EdgeInsets.all(3.0),
+                        //   child: Container(
+                        //     height: 27,
+                        //     width: 27,
+                        //     decoration: BoxDecoration(
+                        //       color: Color(0xff61C0BF),
+                        //       shape: BoxShape.circle,
+                        //     ),
+                        //     child: Icon(
+                        //       Icons.location_searching_rounded,
+                        //       size: 25,
+                        //     ),
+                        //   ),
+                        // ),
                       ),
                     )),
                 // List_View Containers
@@ -170,14 +141,14 @@ class _MainPageState extends State<MainPage> {
                                         fontWeight: FontWeight.bold,
                                         fontSize: 22),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                   Text(
                                     ContainerModel[index].text2,
                                     style: TextStyle(color: Colors.black),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 2,
                                   ),
                                   Text(
@@ -196,11 +167,11 @@ class _MainPageState extends State<MainPage> {
                                             width: 1, color: Colors.black)),
                                     child: Center(
                                         child: TextButton(
-                                      onPressed: () {},
                                       child: Text(
                                         "Explore",
                                         style: TextStyle(color: Colors.black),
                                       ),
+                                      onPressed: () {},
                                     )),
                                   ),
                                 ],
@@ -231,13 +202,13 @@ class _MainPageState extends State<MainPage> {
                 SizedBox(
                   height: 12,
                 ),
-                // Saloon_Container
+                // Salon_Container
                 Container(
                   height: MediaQuery.of(context).size.height * 0.45,
                   //  height:MediaQuery.of(context).size.height,
                   width: double.infinity,
                   child: ListView.builder(
-                    itemCount: SaloonDetails.length,
+                    itemCount: SalonDetails.length,
                     physics: const BouncingScrollPhysics(),
                     itemBuilder: (context, index) => Padding(
                       padding: const EdgeInsets.only(bottom: 8.0),
@@ -258,7 +229,7 @@ class _MainPageState extends State<MainPage> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(12),
                                     image: DecorationImage(
-                                        image: SaloonDetails[index].image,
+                                        image: SalonDetails[index].image,
                                         fit: BoxFit.cover),
                                   ),
                                 ),
@@ -283,7 +254,7 @@ class _MainPageState extends State<MainPage> {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            SaloonDetails[index].bname,
+                                            SalonDetails[index].salonName,
                                             style: const TextStyle(
                                                 color: Colors.black,
                                                 fontWeight: FontWeight.bold,
@@ -294,7 +265,7 @@ class _MainPageState extends State<MainPage> {
                                           //       MediaQuery.of(context).size.width *
                                           //           0.30,
                                           // ),
-                                          // Spacer(),
+                                          Spacer(),
                                           Row(
                                             children: [
                                               const Icon(
@@ -323,7 +294,7 @@ class _MainPageState extends State<MainPage> {
                                             width: 2,
                                           ),
                                           Text(
-                                            SaloonDetails[index].address,
+                                            SalonDetails[index].address,
                                             style: const TextStyle(
                                                 color: Colors.grey,
                                                 fontSize: 12,
@@ -341,7 +312,7 @@ class _MainPageState extends State<MainPage> {
                                             width: 3,
                                           ),
                                           Text(
-                                            SaloonDetails[index].distance,
+                                            SalonDetails[index].distance,
                                             style: const TextStyle(
                                                 color: Colors.black),
                                           ),
@@ -354,7 +325,7 @@ class _MainPageState extends State<MainPage> {
                                                 Navigator.of(context).push(
                                                   MaterialPageRoute(
                                                     builder: (context) =>
-                                                        SaloonDetail(),
+                                                        SalonDetail(),
                                                   ),
                                                 );
                                               },
@@ -404,12 +375,6 @@ class _MainPageState extends State<MainPage> {
         text: "30% off",
         text2: "Supper Offer",
         text3: "Hair-styling & treatment",
-        container: Color(0xffD7CAC6),
-        image: AssetImage("assets/container_Img.png")),
-    TopContainer(
-        text: "30% off",
-        text2: "Supper Offer",
-        text3: "Hair-styling & treatment",
         container: Color(0xffBAF0F0),
         image: AssetImage("assets/container_Img.png")),
     TopContainer(
@@ -425,37 +390,30 @@ class _MainPageState extends State<MainPage> {
         container: Color(0xffBAF0F0),
         image: AssetImage("assets/container_Img.png")),
   ];
-  List<dynamic> SaloonDetails = [
-    SaloonDetailsContainer(
-        bname: "Afaq",
+  List<dynamic> SalonDetails = [
+    SalonDetailsContainer(
+        salonName: "Kaka Ji barber",
+        address: "KDA Sector 9",
+        initialRating: 1,
+        distance: "2km",
+        image: AssetImage("assets/style1.jpeg")),
+    SalonDetailsContainer(
+        salonName: "Beauty salon",
+        address: "KDA Sector 9",
+        initialRating: 1,
+        distance: "3km",
+        image: AssetImage("assets/style1.jpeg")),
+    SalonDetailsContainer(
+        salonName: "Looking sharp",
         address: "KDA Sector 9",
         initialRating: 1,
         distance: "5km",
         image: AssetImage("assets/style1.jpeg")),
-    SaloonDetailsContainer(
-        bname: "Afaq",
+    SalonDetailsContainer(
+        salonName: "Lucky barber",
         address: "KDA Sector 9",
         initialRating: 1,
         distance: "5km",
         image: AssetImage("assets/style1.jpeg")),
-    SaloonDetailsContainer(
-        bname: "Afaq",
-        address: "KDA Sector 9",
-        initialRating: 1,
-        distance: "5km",
-        image: AssetImage("assets/style1.jpeg")),
-    SaloonDetailsContainer(
-        bname: "Afaq",
-        address: "KDA Sector 9",
-        initialRating: 1,
-        distance: "5km",
-        image: AssetImage("assets/style1.jpeg")),
-    SaloonDetailsContainer(
-        bname: "Afaq",
-        address: "KDA Sector 9",
-        initialRating: 1,
-        distance: "5km",
-        image: AssetImage("assets/style1.jpeg")),
-
   ];
 }

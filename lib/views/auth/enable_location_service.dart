@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled6/New%20folder/saloon_page_images_container/bottom_navigation_bar.dart';
 import 'package:untitled6/views/auth/your_location.dart';
+import '../../../reusable_widgets/saloon_page_images_container/bottom_navigation_bar.dart';
 
 class EnableLocationService extends StatelessWidget {
   const EnableLocationService({Key? key}) : super(key: key);

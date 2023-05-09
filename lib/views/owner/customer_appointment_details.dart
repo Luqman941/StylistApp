@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled6/New%20folder/reusable_card_page.dart';
+import 'package:untitled6/reusable_widgets/reusable_card_page.dart';
 
-import 'package:untitled6/views/customer/order_summary.dart';
+import 'package:untitled6/views/customer/2_order_summary.dart';
 
 class CustomerAppointmentDetails extends StatelessWidget {
   const CustomerAppointmentDetails({Key? key}) : super(key: key);

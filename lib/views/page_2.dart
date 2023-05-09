@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'auth/sign_in.dart';
+import 'auth/log_in.dart';
 
 class page_2 extends StatelessWidget {
   final VoidCallback onTapped;
@@ -30,7 +30,7 @@ class page_2 extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Sign_in(),
+                            builder: (context) => Log_in(),
                           ));
                     },
                     child: const Text(

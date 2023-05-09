@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:untitled6/views/customer/2_your_appointment.dart';
+import 'package:untitled6/views/customer/3_appointment_details.dart';
 
 
 class timing extends StatelessWidget {

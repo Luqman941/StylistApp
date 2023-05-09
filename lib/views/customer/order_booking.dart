@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
-import 'package:untitled6/New%20folder/reusable_card_page.dart';
+import 'package:untitled6/reusable_widgets/reusable_card_page.dart';
 
 import 'payment_method.dart';
 

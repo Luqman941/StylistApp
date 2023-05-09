@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled6/views/auth/sign_in.dart';
+import 'package:untitled6/views/auth/log_in.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -13,14 +13,13 @@ class WelcomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 40,
-              ),
+              const SizedBox(height: 40),
+
               Row(
                 children: [
                   TextButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       'Welcome!',
                       style: TextStyle(
                           color: Colors.black,
@@ -30,9 +29,8 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 240,
-              ),
+              const SizedBox(height: 240),
+
               Container(
                 height: 50,
                 width: double.infinity,
@@ -42,8 +40,8 @@ class WelcomePage extends StatelessWidget {
                     border: Border.all(width: 2, color: Colors.black)),
                 child: TextButton(
                   onPressed: () {},
-                  child: Text(
-                    "Register as Owner",
+                  child: const Text(
+                    "Register as an Owner",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -51,9 +49,8 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 30,
-              ),
+              const SizedBox(height: 30),
+
               Container(
                 height: 50,
                 width: double.infinity,
@@ -65,12 +62,12 @@ class WelcomePage extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => Sign_in(),
+                        builder: (context) => Log_in(),
                       ),
                     );
                   },
-                  child: Text(
-                    "Regester as a Customer",
+                  child: const Text(
+                    "Register as a Customer",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -78,31 +75,8 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 110,
-              ),
-              Center(
-                child: Container(
-                  height: 50,
-                  width: 100,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(28),
-                      color: Color(0xff4D9DD0),
-                      border: Border.all(width: 2, color: Colors.black)),
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text(
-                      "Cancle",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
-              ),
+              const SizedBox(height: 110),
+
             ],
           ),
         ),

@@ -1,7 +1,7 @@
 import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled6/views/customer/2_your_appointment.dart';
+import 'package:untitled6/views/customer/3_appointment_details.dart';
 
 class DateTimePage extends StatefulWidget {
   const DateTimePage({Key? key}) : super(key: key);
@@ -175,7 +175,7 @@ class _DateTimePageState extends State<DateTimePage> {
               Spacer(),
               GestureDetector(
                   onTap: () {
-                    Get.to(YourAppointment());
+                    Get.to(AppointmentDetails());
                   },
                   child: Container(
                     height: 50,

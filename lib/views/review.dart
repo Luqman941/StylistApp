@@ -250,7 +250,7 @@ class _ReviewsState extends State<Reviews> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
-                                  image: AssetImage("assets/favoriteSaloon.png"),
+                                  image: AssetImage("assets/favoriteSalon.png"),
                                   fit: BoxFit.cover),
                               border: Border.all(width: 2, color: Colors.black),
                             ),

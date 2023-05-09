@@ -66,7 +66,7 @@ class NotificationPage extends StatelessWidget {
                                 shape: BoxShape.circle,
                                 image: const DecorationImage(
                                     image:
-                                        AssetImage("assets/favoriteSaloon.png"),
+                                        AssetImage("assets/favoriteSalon.png"),
                                     fit: BoxFit.cover),
                               ),
                             ),

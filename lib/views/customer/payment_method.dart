@@ -5,11 +5,13 @@ import 'package:untitled6/models/updated_page.dart';
 
 import 'order_successfully_completed.dart';
 
-enum selectedmethod {
+enum SelectedMethod {
   paypal(),
-  // visacard,
-  // paaytm,
-  // cashshop;
+  stripe,
+  // paypal,
+  visacard,
+  paytm,
+  cashshop;
 }
 
 class PaymentMethod extends StatefulWidget {
@@ -20,7 +22,7 @@ class PaymentMethod extends StatefulWidget {
 }
 
 class _PaymentMethodState extends State<PaymentMethod> {
-  selectedmethod? selected;
+  SelectedMethod? selected;
   @override
   Widget build(BuildContext context) {
     UpdatedPage updatpro = Get.put(UpdatedPage());
@@ -28,114 +30,133 @@ class _PaymentMethodState extends State<PaymentMethod> {
       child: Container(
         // height: 500,
         child: Padding(
-          padding: EdgeInsets.only(left: 15, right: 15, top: 15),
+          padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Row(
-                children: [
+                children: const [
                   Text(
-                    "Choose your Payement Option",
+                    "Choose your Payment Option",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   Spacer(),
-                  Icon(
-                    Icons.close,
-                  )
+                  Icon(Icons.close)
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                "Select any option suitable for you to complete the payement process",
+              const SizedBox(height: 10),
+
+              const Text(
+                // "Select option to complete the payment process",
+                "Select any option suitable for you to complete the payment process",
                 style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w500,
                     color: Colors.black54),
               ),
-              SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
+
+              //  Stripe
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    selected = selectedmethod.paypal;
+                    selected = SelectedMethod.stripe;
                   });
                 },
-                child: multiupdatwidget(
+                child: MultiUpdateWidget(
                   images: "assets/images/stripe.png",
-                  text: "Strip",
-                  colr: selected == selectedmethod.paypal
+                  text: "Stripe",
+                  colr: selected == SelectedMethod.stripe
                       ? Colors.purple.withOpacity(.3)
                       : Colors.white,
-                  colrs: selected == selectedmethod.paypal
+                  colrs: selected == SelectedMethod.stripe
                       ? Colors.black
                       : Colors.white,
                 ),
               ),
-              SizedBox(
-                height: 15,
+              const SizedBox(height: 15),
+
+              //  Paypal
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selected = SelectedMethod.paypal;
+                  });
+                },
+                child: MultiUpdateWidget(
+                  images: "assets/images/1_payPal.png",
+                  text: "Paypal",
+                  colr: selected == SelectedMethod.paypal
+                      ? Colors.purple.withOpacity(.3)
+                      : Colors.white,
+                  colrs: selected == SelectedMethod.paypal
+                      ? Colors.black
+                      : Colors.white,
+                ),
               ),
-              // GestureDetector(
-              //   onTap: () {
-              //     setState(() {
-              //       selected = selectedmethod.visacard;
-              //     });
-              //   },
-              //   child: multiupdatwidget(
-              //     images: "assets/download__2_-removebg-preview.png",
-              //     text: "Visa Card",
-              //     colr: selected == selectedmethod.visacard
-              //         ? Colors.purple.withOpacity(.3)
-              //         : Colors.white,
-              //     colrs: selected == selectedmethod.visacard
-              //         ? Colors.black
-              //         : Colors.white,
-              //   ),
-              // ),
-              SizedBox(
-                height: 15,
+              const SizedBox(height: 15),
+
+              //  VisaCard
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selected = SelectedMethod.visacard;
+                  });
+                },
+                child: MultiUpdateWidget(
+                  images: "assets/2_visa.png",
+                  text: "Visa Card",
+                  colr: selected == SelectedMethod.visacard
+                      ? Colors.purple.withOpacity(.3)
+                      : Colors.white,
+                  colrs: selected == SelectedMethod.visacard
+                      ? Colors.black
+                      : Colors.white,
+                ),
               ),
+              const SizedBox(height: 15),
+              //
+              // //  Paytm
               // GestureDetector(
               //     onTap: () {
               //       setState(() {
-              //         selected = selectedmethod.paaytm;
+              //         selected = SelectedMethod.paytm;
               //       });
               //     },
-              //     child: multiupdatwidget(
-              //       images: "assets/download__3_-removebg-preview.png",
+              //     child: MultiUpdateWidget(
+              //       images: "assets/3_paytm.png",
               //       text: "Paytm",
-              //       colr: selected == selectedmethod.paaytm
+              //       colr: selected == SelectedMethod.paytm
               //           ? Colors.purple.withOpacity(.3)
               //           : Colors.white,
-              //       colrs: selected == selectedmethod.paaytm
+              //       colrs: selected == SelectedMethod.paytm
               //           ? Colors.black
               //           : Colors.white,
               //     )),
-
+              // const SizedBox(height: 15),
+              //
+              // //  CashShop
               // GestureDetector(
               //   onTap: () {
               //     setState(() {
-              //       selected = selectedmethod.cashshop;
+              //       selected = SelectedMethod.cashshop;
               //     });
               //   },
-              //   child: multiupdatwidget(
-              //       images: "assets/download__4_-removebg-preview.png",
+              //   child: MultiUpdateWidget(
+              //       images: "assets/4_letsShop.png",
               //       text: "Cash on Shop",
-              //       colr: selected == selectedmethod.cashshop
+              //       colr: selected == SelectedMethod.cashshop
               //           ? Colors.purple.withOpacity(.3)
               //           : Colors.white,
-              //       colrs: selected == selectedmethod.cashshop
+              //       colrs: selected == SelectedMethod.cashshop
               //           ? Colors.black
               //           : Colors.white),
               // ),
-              SizedBox(
-                height: 35,
-              ),
+              const SizedBox(height: 35),
+
               GestureDetector(
                 onTap: () {
                   // Get.to(orderSuccessfullyPage());
@@ -147,7 +168,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(color: Colors.black, width: 1),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Continue",
                       style: TextStyle(
@@ -166,14 +187,16 @@ class _PaymentMethodState extends State<PaymentMethod> {
   }
 }
 
-class multiupdatwidget extends StatelessWidget {
-  multiupdatwidget({
+//  TODO: MultiUpdateWidget konse folder mei rko
+class MultiUpdateWidget extends StatelessWidget {
+  const MultiUpdateWidget({
     Key? key,
     required this.images,
     required this.text,
     required this.colr,
     required this.colrs,
   }) : super(key: key);
+
   final String images;
   final String text;
   final Color colr;
@@ -192,7 +215,7 @@ class multiupdatwidget extends StatelessWidget {
             border: Border.all(color: Colors.black, width: 1),
           ),
           child: Padding(
-            padding: EdgeInsets.only(left: 15, top: 5, bottom: 5, right: 15),
+            padding: const EdgeInsets.only(left: 15, top: 5, bottom: 5, right: 15),
             child: Row(
               children: [
                 Container(
@@ -204,17 +227,18 @@ class multiupdatwidget extends StatelessWidget {
                         image: AssetImage(images), //fit: BoxFit.cover,
                       )),
                 ),
-                SizedBox(
-                  width: 10,
+                const SizedBox(
+                  width: 10
                 ),
+
                 Text(
                   text,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 GestureDetector(
                     onTap: () {},
                     child: Container(
