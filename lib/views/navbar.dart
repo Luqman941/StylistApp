@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../controller/authentication_repository/AuthenticationRepository.dart';
 import '../controller/sign_in_controller.dart';
 import 'about_us.dart';
 import 'auth/forgot_password.dart';
@@ -142,12 +144,15 @@ class NavBar extends StatelessWidget {
 
               FirebaseAuth.instance.signOut();
 
-              Navigator.pop(context);
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SignInController(),
-                  ));
+              // AuthenticationRepository.instance.logout();
+              Get.offAll(()=> SignInController());
+
+              // Navigator.pop(context);
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //       builder: (context) => SignInController(),
+              //     ));
             },
           ),
         ],

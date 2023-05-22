@@ -71,10 +71,10 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
       ? MainPage()       // MainPage will be called after verification
       : Scaffold(
           appBar: AppBar(
-            title: Text('Verify Email'),
+            title: const Text('Verify Email'),
           ),
           body: Padding(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -83,30 +83,20 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                   style: TextStyle(fontSize: 20),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
+
                 ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                      minimumSize: Size.fromHeight(50),
-                      backgroundColor: Color(0xff4D9DD0),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          side: BorderSide(width: 2, color: Colors.black))),
-                  icon: Icon(Icons.email, size: 32),
+                  icon: const Icon(Icons.email, size: 32),
                   label: const Text(
                     'Resent Email',
                     style: TextStyle(fontSize: 24),
                   ),
                   onPressed: canResendEmail ? sendVerificationEmail : null,
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
+
                 ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                      minimumSize: Size.fromHeight(50),
-                      backgroundColor: Color(0xff4D9DD0),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          side: BorderSide(width: 2, color: Colors.black))),
-                  icon: Icon(Icons.email, size: 32),
+                  icon: const Icon(Icons.email, size: 32),
                   label: const Text(
                     'Cancel',
                     style: TextStyle(fontSize: 24),

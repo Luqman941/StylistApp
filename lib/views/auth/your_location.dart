@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class YourLocation extends StatefulWidget {
   const YourLocation({Key? key}) : super(key: key);
@@ -12,50 +13,67 @@ class _YourLocationState extends State<YourLocation> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
           image: AssetImage('assets/gMapLocation.png'),
           fit: BoxFit.cover,
         )),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 60.0),
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 15,
                   width: 15,
                 ),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      " Your Location",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25),
+                    Container(
+                      color: Colors.white,
+                      child: Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: const Icon(
+                              Icons.arrow_back_ios_new,
+                              size: 20,
+                              color: Colors.black,
+                            ),
+                          ),
+                          const SizedBox(width: 20),
+                          const Text(
+                            'Your Location',
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
+
+                // Search Containor
                 Container(
-                  height: 60,
+                  height: 50,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      border: Border.all(width: 3, color: Colors.black)),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(width: 1, color: Colors.black)),
                   child: TextFormField(
                     decoration: InputDecoration(
                       icon: IconButton(
                           onPressed: () {},
-                          iconSize: 30,
-                          color: Colors.black,
-                          icon: Icon(Icons.search_sharp)),
-                      hintText: 'search',
-                      hintStyle: TextStyle(fontSize: 25),
+                          icon: const Icon(
+                            Icons.search_sharp,
+                            size: 30,
+                          )),
+                      hintText: "Search",
                       border: InputBorder.none,
                     ),
                   ),

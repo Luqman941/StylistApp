@@ -1,10 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../constants/text_strings.dart';
+import '../../utils/text_widget.dart';
 import '../navbar.dart';
 import 'salon_detail.dart';
 import 'package:untitled6/models/mainpage_topcontainer.dart';
-import 'package:untitled6/models/salon_details_container.dart';
+import 'package:untitled6/models/salon_details_model.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -21,22 +24,22 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       drawer: const NavBar(),
       appBar: AppBar(
-        title: Padding(
-          padding: EdgeInsets.only(left: 100),
-          child: Text('Stylist'),
-        ),
+        leading: const Icon(Icons.menu),
+        title: const Text(tAppName),
+        centerTitle: true,
+        elevation: 0,
       ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Custom Bar
                 Padding(
-                  padding: EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   child: Row(children: [
                     Container(
                       height: 40,
@@ -48,17 +51,14 @@ class _MainPageState extends State<MainPage> {
                           border: Border.all(width: 1, color: Colors.black),
                           shape: BoxShape.circle),
                     ),
-                    SizedBox(
-                      width: 15,
-                    ),
+                    const SizedBox(width: 15),
                     Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            " Afaq Habib",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
+                          const TextWidget(
+                            text: " Afaq Habib",
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
                           ),
                           Row(children: [
                             Icon(
@@ -75,57 +75,59 @@ class _MainPageState extends State<MainPage> {
                   ]),
                 ),
 
-                // Search Containor
+                //-- Search Box
                 Container(
-                    height: 50,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        border: Border.all(width: 1, color: Colors.black)),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        icon: IconButton(
-                            onPressed: () {}, icon: Icon(Icons.search_sharp)),
-                        hintText: "Search",
-                        border: InputBorder.none,
-                        // suffixIcon: Padding(
-                        //   padding: const EdgeInsets.all(3.0),
-                        //   child: Container(
-                        //     height: 27,
-                        //     width: 27,
-                        //     decoration: BoxDecoration(
-                        //       color: Color(0xff61C0BF),
-                        //       shape: BoxShape.circle,
-                        //     ),
-                        //     child: Icon(
-                        //       Icons.location_searching_rounded,
-                        //       size: 25,
-                        //     ),
-                        //   ),
-                        // ),
-                      ),
-                    )),
+                  height: 50,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(width: 1, color: Colors.black)),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      icon: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.search_sharp)),
+                      hintText: "Search",
+                      border: InputBorder.none,
+                      // suffixIcon: Padding(
+                      //   padding: const EdgeInsets.all(3.0),
+                      //   child: Container(
+                      //     height: 27,
+                      //     width: 27,
+                      //     decoration: BoxDecoration(
+                      //       color: Color(0xff61C0BF),
+                      //       shape: BoxShape.circle,
+                      //     ),
+                      //     child: Icon(
+                      //       Icons.location_searching_rounded,
+                      //       size: 25,
+                      //     ),
+                      //   ),
+                      // ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+
                 // List_View Containers
                 SizedBox(
-                  height: 20,
-                ),
-                Container(
                   height: 160,
                   width: MediaQuery.of(context).size.width * 0.95,
                   child: ListView.builder(
-                    physics: BouncingScrollPhysics(),
+                    physics: const BouncingScrollPhysics(),
+                    shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
-                    itemCount: ContainerModel.length,
+                    itemCount: containerModel.length,
                     itemBuilder: (context, index) => Padding(
                       padding: const EdgeInsets.only(right: 15),
                       child: Container(
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         height: 170,
                         width: MediaQuery.of(context).size.width * 0.80,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(width: 1),
-                            color: ContainerModel[index].container),
+                            color: containerModel[index].container),
                         child: Row(
                           children: [
                             Padding(
@@ -135,80 +137,74 @@ class _MainPageState extends State<MainPage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    ContainerModel[index].text,
-                                    style: TextStyle(
+                                    containerModel[index].text,
+                                    style: const TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 22),
                                   ),
-                                  const SizedBox(
-                                    height: 10,
-                                  ),
+                                  const SizedBox(height: 10),
                                   Text(
-                                    ContainerModel[index].text2,
-                                    style: TextStyle(color: Colors.black),
+                                    containerModel[index].text2,
+                                    style: const TextStyle(color: Colors.black),
                                   ),
-                                  const SizedBox(
-                                    height: 2,
-                                  ),
+                                  const SizedBox(height: 2),
                                   Text(
-                                    ContainerModel[index].text3,
-                                    style: TextStyle(
+                                    containerModel[index].text3,
+                                    style: const TextStyle(
                                         color: Colors.black, fontSize: 13),
                                   ),
-                                  Spacer(),
+                                  const Spacer(),
                                   Container(
                                     height: 35,
                                     width: 110,
                                     decoration: BoxDecoration(
-                                        color: Color(0xffE0C3F6),
+                                        color: const Color(0xffE0C3F6),
                                         borderRadius: BorderRadius.circular(20),
                                         border: Border.all(
                                             width: 1, color: Colors.black)),
                                     child: Center(
                                         child: TextButton(
-                                      child: Text(
+                                      child: const Text(
                                         "Explore",
                                         style: TextStyle(color: Colors.black),
                                       ),
                                       onPressed: () {},
                                     )),
                                   ),
-                                ],
+                                ]
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Container(
                               height: 120,
                               width: 125,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
-                                image: ContainerModel[index].image,
+                                image: containerModel[index].image,
                               )),
                             ),
-                          ],
+                          ]
                         ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 12,
-                ),
-                Text(
+                const SizedBox(height: 12),
+
+                const Text(
                   "All Available Salons",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                 ),
-                SizedBox(
-                  height: 12,
-                ),
+                const SizedBox(height: 12),
+
                 // Salon_Container
                 Container(
                   height: MediaQuery.of(context).size.height * 0.45,
                   //  height:MediaQuery.of(context).size.height,
                   width: double.infinity,
                   child: ListView.builder(
-                    itemCount: SalonDetails.length,
+                    itemCount: salonDetails.length,
                     physics: const BouncingScrollPhysics(),
                     itemBuilder: (context, index) => Padding(
                       padding: const EdgeInsets.only(bottom: 8.0),
@@ -229,14 +225,12 @@ class _MainPageState extends State<MainPage> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(12),
                                     image: DecorationImage(
-                                        image: SalonDetails[index].image,
+                                        image: salonDetails[index].image,
                                         fit: BoxFit.cover),
                                   ),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 12,
-                              ),
+                              const SizedBox(width: 12),
                               Expanded(
                                 flex: 2,
                                 child: Container(
@@ -254,18 +248,14 @@ class _MainPageState extends State<MainPage> {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            SalonDetails[index].salonName,
+                                            salonDetails[index].salonName,
                                             style: const TextStyle(
                                                 color: Colors.black,
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 18),
                                           ),
-                                          // SizedBox(
-                                          //   width:
-                                          //       MediaQuery.of(context).size.width *
-                                          //           0.30,
-                                          // ),
-                                          Spacer(),
+
+                                          const Spacer(),
                                           Row(
                                             children: [
                                               const Icon(
@@ -277,9 +267,8 @@ class _MainPageState extends State<MainPage> {
                                           ),
                                         ],
                                       ),
-                                      const SizedBox(
-                                        height: 10,
-                                      ),
+                                      const SizedBox(height: 10),
+
                                       Row(
                                         children: [
                                           GestureDetector(
@@ -290,11 +279,9 @@ class _MainPageState extends State<MainPage> {
                                               size: 18,
                                             ),
                                           ),
-                                          const SizedBox(
-                                            width: 2,
-                                          ),
+                                          const SizedBox(width: 2),
                                           Text(
-                                            SalonDetails[index].address,
+                                            salonDetails[index].address,
                                             style: const TextStyle(
                                                 color: Colors.grey,
                                                 fontSize: 12,
@@ -308,11 +295,9 @@ class _MainPageState extends State<MainPage> {
                                             Icons.social_distance,
                                             color: Colors.green,
                                           ),
-                                          const SizedBox(
-                                            width: 3,
-                                          ),
+                                          const SizedBox(width: 3),
                                           Text(
-                                            SalonDetails[index].distance,
+                                            salonDetails[index].distance,
                                             style: const TextStyle(
                                                 color: Colors.black),
                                           ),
@@ -322,12 +307,8 @@ class _MainPageState extends State<MainPage> {
                                             width: 80,
                                             child: ElevatedButton(
                                               onPressed: () {
-                                                Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        SalonDetail(),
-                                                  ),
-                                                );
+                                                Get.to(
+                                                    () => const SalonDetail());
                                               },
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor:
@@ -370,7 +351,7 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  List<dynamic> ContainerModel = [
+  List<dynamic> containerModel = [
     TopContainer(
         text: "30% off",
         text2: "Supper Offer",
@@ -390,7 +371,7 @@ class _MainPageState extends State<MainPage> {
         container: Color(0xffBAF0F0),
         image: AssetImage("assets/container_Img.png")),
   ];
-  List<dynamic> SalonDetails = [
+  List<dynamic> salonDetails = [
     SalonDetailsContainer(
         salonName: "Kaka Ji barber",
         address: "KDA Sector 9",

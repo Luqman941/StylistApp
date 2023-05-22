@@ -40,12 +40,10 @@ class NotificationPage extends StatelessWidget {
                       fontSize: 20),
                 ),
               ),
-              SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               Expanded(
                 child: ListView.builder(
-                  itemCount: 10,
+                  itemCount: 5,
                   physics: BouncingScrollPhysics(),
                   itemBuilder: (context, index) => Padding(
                     padding: const EdgeInsets.only(bottom: 8.0),
@@ -71,9 +69,7 @@ class NotificationPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            width: 10,
-                          ),
+                          const SizedBox(width: 10),
                           Expanded(
                             flex: 5,
                             child: Column(
@@ -85,9 +81,7 @@ class NotificationPage extends StatelessWidget {
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(
-                                  height: 5,
-                                ),
+                                SizedBox(height: 5),
                                 Text(
                                   "35 min ago 'New Message'",
                                   style: TextStyle(
@@ -98,7 +92,7 @@ class NotificationPage extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Expanded(
                             flex: 0,
                             child: Container(

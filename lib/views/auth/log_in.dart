@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled6/views/auth/sign_up.dart';
+import 'package:get/get.dart';
+import 'sign_up.dart';
 
 import '../../main.dart';
 import '../../utils/utils_error.dart';
 import 'forgot_password.dart';
-import '../customer/main_page.dart';
 import '../../utils/platform_boxes.dart';
 import 'package:email_validator/email_validator.dart';
 
@@ -39,8 +39,8 @@ class _Log_inState extends State<Log_in> {
   Widget build(BuildContext context) => Scaffold(
         body: SafeArea(
           child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            padding: EdgeInsets.all(16),
+            physics: const BouncingScrollPhysics(),
+            padding: const EdgeInsets.all(16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -49,10 +49,10 @@ class _Log_inState extends State<Log_in> {
                   children: [
                     const SizedBox(height: 20),
                     Padding(
-                      padding: EdgeInsets.only(left: 9.0),
+                      padding: const EdgeInsets.only(left: 9.0),
                       child: Text(
                         "Sign In",
-                        style: Theme.of(context).textTheme.headline4,
+                        style: Theme.of(context).textTheme.headline2,
                         // style: TextStyle(
                         //     color: Colors.black,
                         //     fontSize: 25,
@@ -86,58 +86,18 @@ class _Log_inState extends State<Log_in> {
                       controller: emailController,
                       cursorColor: Colors.white,
                       textInputAction: TextInputAction.next,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: "Email",
-                        labelStyle: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                        floatingLabelBehavior: FloatingLabelBehavior.always,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide(width: 2, color: Colors.black),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide(width: 2, color: Colors.black),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide(width: 2, color: Colors.black),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide:
-                              BorderSide(width: 2, color: Colors.redAccent),
-                        ),
                       ),
                     ),
                     const SizedBox(height: 30),
-
                     TextField(
                       controller: passwordController,
                       textInputAction: TextInputAction.done,
                       obscureText: isObsecure,
                       decoration: InputDecoration(
                         labelText: "Password",
-                        labelStyle: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                        floatingLabelBehavior: FloatingLabelBehavior.always,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide(width: 2, color: Colors.black),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide(width: 2, color: Colors.black),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide(width: 2, color: Colors.black),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide:
-                              BorderSide(width: 2, color: Colors.redAccent),
-                        ),
+                        // hintText: "Password",
                         suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
@@ -170,35 +130,22 @@ class _Log_inState extends State<Log_in> {
                                   color:
                                       Theme.of(context).colorScheme.secondary),
                             ),
-                            onTap: () =>
-                                Navigator.of(context).push(MaterialPageRoute(
-                              builder: (cotext) => ForgotPassword(),
-                            )),
+                            onTap: () => Get.to(const ForgotPassword()),
                           ),
                         ],
                       ),
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton.icon(
-                      // style: ElevatedButton.styleFrom(
-                      //   minimumSize: Size.fromHeight(50),
-                      // ),
-                      style: ElevatedButton.styleFrom(
-                          minimumSize: Size.fromHeight(50),
-                          backgroundColor: Color(0xff4D9DD0),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                              side: BorderSide(width: 2, color: Colors.black))),
-
-                      icon: Icon(Icons.lock_open, size: 32),
-                      label: Text(
+                      // Style property is defined in Elevated button theme class
+                      icon: const Icon(Icons.lock_open, size: 32),
+                      label: const Text(
                         'Sign In',
                         style: TextStyle(fontSize: 24),
                       ),
                       onPressed: signIn,
                     ),
                     const SizedBox(height: 20),
-
                     Center(
                       child: RichText(
                         text: TextSpan(
@@ -211,7 +158,8 @@ class _Log_inState extends State<Log_in> {
                               text: 'Sign Up',
                               style: TextStyle(
                                   decoration: TextDecoration.underline,
-                                  color: Theme.of(context).colorScheme.secondary),
+                                  color:
+                                      Theme.of(context).colorScheme.secondary),
                             ),
                           ],
                         ),
@@ -228,11 +176,11 @@ class _Log_inState extends State<Log_in> {
                           ),
                         ),
                         const SizedBox(width: 5),
-                        Text(
+                        const Text(
                           "Or ",
                           style: TextStyle(color: Colors.grey),
                         ),
-                        Text(
+                        const Text(
                           "Sign in with",
                           style: TextStyle(color: Colors.black),
                         ),
@@ -288,6 +236,8 @@ class _Log_inState extends State<Log_in> {
     navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 }
+
+
 
 // class Sign_in extends StatefulWidget {
 //   const Sign_in({Key? key}) : super(key: key);

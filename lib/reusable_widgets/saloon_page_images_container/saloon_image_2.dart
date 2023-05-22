@@ -6,7 +6,7 @@ class Saloon_image_2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image(
-      image: AssetImage("assets/pic_two.jpeg"),
+      image: AssetImage("assets/pic2.jpeg"),
       fit: BoxFit.cover,
     );
   }

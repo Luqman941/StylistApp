@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:untitled6/views/page_1.dart';
 import 'package:untitled6/views/page_2.dart';
@@ -8,7 +10,8 @@ import 'auth/log_in.dart';
 import 'welcome_page.dart';
 
 class OnBoardingScreen extends StatelessWidget {
-  // FrontPage({Key? key}) : super(key: key);
+  OnBoardingScreen({super.key});
+
   final _controller = PageController();
 
   @override
@@ -18,10 +21,9 @@ class OnBoardingScreen extends StatelessWidget {
         children: [
           PageView(
             controller: _controller,
-            //scrollDirection: Axis.vertical,
             children: [
-              page_1(
-                skipOntapped: () {
+              Page1(
+                skipOnTapped: () {
                   _controller.jumpToPage(2);
                 },
                 onTapped: () {
@@ -30,32 +32,30 @@ class OnBoardingScreen extends StatelessWidget {
                       curve: Curves.easeIn);
                 },
               ),
-              page_2(
+              Page2(
                 onTapped: () {
                   _controller.nextPage(
                       duration: const Duration(milliseconds: 500),
                       curve: Curves.easeIn);
                 },
               ),
-              page_3(
+              Page3(
                 onTapped: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const WelcomePage()));
+                  Get.to(() => const WelcomePage());
                 },
               ),
             ],
           ),
           Container(
-              alignment: Alignment(-0.8, 0.90),
-              child: SmoothPageIndicator(
-                  effect: WormEffect(
-                    dotColor: Colors.grey.shade300,
-                    activeDotColor: Colors.grey,
-                  ),
-                  controller: _controller,
-                  count: 3)),
+            alignment: const Alignment(-0.8, 0.90),
+            child: SmoothPageIndicator(
+                effect: WormEffect(
+                  dotColor: Colors.grey.shade300,
+                  activeDotColor: Colors.grey,
+                ),
+                controller: _controller,
+                count: 3),
+          ),
         ],
       ),
     );

@@ -28,39 +28,51 @@ class _SalonDetailState extends State<SalonDetail>
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(top: 50),
-                  child: Icon(
-                    Icons.favorite,
-                    color: Colors.grey,
-                    size: 40,
+                  padding: EdgeInsets.symmetric(vertical: 50, horizontal: 20),
+                  child: CircleAvatar(
+                    child: ClipOval(
+                      child: Icon(
+                        Icons.favorite,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(top: 90),
-                  child: Icon(
-                    Icons.device_hub_sharp,
-                    color: Colors.red,
-                    size: 40,
+                  padding: EdgeInsets.symmetric(vertical: 100, horizontal: 20),
+                  child: CircleAvatar(
+                    child: ClipOval(
+                      child: Icon(
+                        Icons.share_rounded,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(top: 130),
-                  child: Icon(
-                    Icons.phone,
-                    color: Colors.green,
-                    size: 40,
+                  padding: EdgeInsets.symmetric(vertical: 150, horizontal: 20),
+                  child: CircleAvatar(
+                    child: ClipOval(
+                      child: Icon(
+                        Icons.phone,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -89,16 +101,16 @@ class _SalonDetailState extends State<SalonDetail>
                               const Text(
                                 "Kaka Ji Barber",
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 25,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
                               Container(
-                                height: 50,
+                                height: 35,
                                 width: 70,
                                 decoration: BoxDecoration(
                                   color: Colors.purple.withOpacity(.3),
-                                  borderRadius: BorderRadius.circular(15),
+                                  borderRadius: BorderRadius.circular(20),
                                   border:
                                       Border.all(color: Colors.black, width: 1),
                                 ),
@@ -125,20 +137,14 @@ class _SalonDetailState extends State<SalonDetail>
                               )
                             ],
                           ),
-                          const SizedBox(
-                            height: 10
-                          ),
-
+                          const SizedBox(height: 10),
                           Row(
                             children: const [
                               Icon(
                                 Icons.star_border,
                                 color: Colors.yellow,
                               ),
-                              SizedBox(
-                                width: 8
-                              ),
-
+                              SizedBox(width: 8),
                               Text(
                                 "4.9",
                                 style: TextStyle(
@@ -146,10 +152,7 @@ class _SalonDetailState extends State<SalonDetail>
                                     fontWeight: FontWeight.w500,
                                     color: Colors.black54),
                               ),
-                              SizedBox(
-                                width: 8
-                              ),
-
+                              SizedBox(width: 8),
                               Text(
                                 "(76 Reviews)",
                                 style: TextStyle(
@@ -157,19 +160,6 @@ class _SalonDetailState extends State<SalonDetail>
                                     fontWeight: FontWeight.w500,
                                     color: Colors.black54),
                               ),
-                              Spacer(),
-                              Icon(Icons.data_usage_rounded),
-                              SizedBox(
-                                width: 8
-                              ),
-
-                              Text(
-                                "Duration",
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black54),
-                              )
                             ],
                           ),
                           const TabbarView(),

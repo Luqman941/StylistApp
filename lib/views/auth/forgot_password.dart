@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
 import 'package:untitled6/utils/utils_error.dart';
 import 'log_in.dart';
-
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);
@@ -34,27 +34,21 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
+
                 Row(
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Log_in(),
-                            ));
+                        Get.to(() => const Log_in());
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_back_ios_new,
                         size: 18,
                       ),
                     ),
-                    SizedBox(
-                      width: 20,
-                    ),
+                    const SizedBox(width: 20),
+
                     const Text(
                       "Forgot Password",
                       style: TextStyle(
@@ -64,54 +58,26 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                const Text(
+                const SizedBox(height: 10),
+
+                Text(
                   "Reset Password",
-                  style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      wordSpacing: 1,
-                      letterSpacing: 1),
+                  style: Theme.of(context).textTheme.headline4,
                 ),
-                SizedBox(
-                  height: 6,
-                ),
+                const SizedBox(height: 6),
                 const Text(
-                  "Recieve an Email to reset your password.",
+                  "Receive an Email to reset your password.",
                   style: TextStyle(
                       color: Colors.grey, fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(
-                  height: 40,
-                ),
+                const SizedBox(height: 40),
+
                 TextFormField(
                   controller: emailController,
                   cursorColor: Colors.white,
                   textInputAction: TextInputAction.done,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Email",
-                    labelStyle: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                    floatingLabelBehavior: FloatingLabelBehavior.always,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide(width: 2, color: Colors.black),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide(width: 2, color: Colors.black),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide(width: 2, color: Colors.black),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide(width: 2, color: Colors.redAccent),
-                    ),
                   ),
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (email) =>
@@ -119,18 +85,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           ? 'Enter a valid email'
                           : null,
                 ),
-                const SizedBox(
-                  height: 25,
-                ),
+                const SizedBox(height: 25),
+
                 ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                      minimumSize: Size.fromHeight(50),
-                      backgroundColor: Color(0xff4D9DD0),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          side: BorderSide(width: 2, color: Colors.black))),
-                  icon: Icon(Icons.email_outlined, size: 32),
-                  label: Text(
+                  icon: const Icon(Icons.email_outlined, size: 32),
+                  label: const Text(
                     'Reset Password',
                     style: TextStyle(fontSize: 24),
                   ),

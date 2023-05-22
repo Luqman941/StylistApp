@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import 'package:untitled6/utils/text_widget.dart';
+import '../constants/image_string.dart';
 import 'auth/log_in.dart';
 
-class page_1 extends StatelessWidget {
+class Page1 extends StatelessWidget {
   final VoidCallback onTapped;
-  final VoidCallback skipOntapped;
+  final VoidCallback skipOnTapped;
 
-  const page_1({super.key, required this.onTapped, required this.skipOntapped});
+  const Page1({super.key, required this.onTapped, required this.skipOnTapped});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor:Colors.grey,
-
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20.0),
@@ -25,32 +26,22 @@ class page_1 extends StatelessWidget {
                 children: [
                   TextButton(
                     style: TextButton.styleFrom(
-                      textStyle: const TextStyle(fontSize: 20),
-                    ),
+                        textStyle: const TextStyle(fontSize: 20)),
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Log_in(),
-                          ));
+                      Get.to(() => const Log_in());
                     },
-                    child: const Text(
-                      'Skip',
-                      style: TextStyle(color: Colors.black),
-                    ),
+                    child: const TextWidget(text: 'Skip'),
                   ),
                 ],
               ),
-              SizedBox(
-                height: 40,
-              ),
+              const SizedBox(height: 40),
               Padding(
                 padding: const EdgeInsets.only(bottom: 20.0),
                 child: Center(
                   child: Container(
                     height: 300,
                     width: 300,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(250),
                         bottomRight: Radius.circular(80),
@@ -59,44 +50,25 @@ class page_1 extends StatelessWidget {
                       ),
                       color: Colors.pink,
                       image: DecorationImage(
-                        image: AssetImage("assets/pic_three.jpeg"),
+                        image: AssetImage(tOnBoardingImage1),
                         fit: BoxFit.cover,
                       ),
                     ),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 100,
-              ),
+              const SizedBox(height: 100),
               Padding(
-                padding: const EdgeInsets.only(
-                  left: 30.0,
-                ),
+                padding: const EdgeInsets.only(left: 30.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Explore Barber Shop",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                          fontSize: 28),
-                    ),
-                    Text(
-                      "in Your Area",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                          fontSize: 28),
-                    ),
+                    Text("Explore Barber Shop\nin Your Area",
+                        style: Theme.of(context).textTheme.headline4),
                   ],
                 ),
               ),
-              // SizedBox(
-              //   height: 40,
-              // ),
-              Spacer(),
+              const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -108,15 +80,15 @@ class page_1 extends StatelessWidget {
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.black, width: 1.5),
                           borderRadius: BorderRadius.circular(25),
-                          color: Color(0xff4D9DD0)),
+                          color: const Color(0xff4D9DD0)),
                       child: TextButton(
                         style: TextButton.styleFrom(
                           textStyle: const TextStyle(fontSize: 20),
                         ),
                         onPressed: onTapped,
-                        child: const Text(
-                          'Next',
-                          style: TextStyle(color: Colors.white),
+                        child: const TextWidget(
+                          text: 'Next',
+                          color: Colors.white,
                         ),
                       ),
                     ),

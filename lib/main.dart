@@ -37,7 +37,6 @@ import 'views/customer/profile_page.dart';
 import 'reusable_widgets/saloon_mainpage_container.dart';
 import 'reusable_widgets/reusable_card_page.dart';
 
-
 import 'views/customer/about_barbershop.dart';
 import 'views/about_us.dart';
 import 'views/customer/order_booking.dart';
@@ -48,10 +47,14 @@ import 'day.dart';
 import 'views/customer/2_order_summary.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'controller/authentication_repository/AuthenticationRepository.dart';
+
+import 'views/services.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+      // .then((value) => Get.put(AuthenticationRepository()));
 
   runApp(const MyApp());
 }
@@ -72,7 +75,6 @@ class _MyAppState extends State<MyApp> {
     void toggle() => setState(() => isLogin = !isLogin);
 
     return GetMaterialApp(
-
       scaffoldMessengerKey: Utils.messengerKey, //It is used in utils
       navigatorKey: navigatorKey, //It is used in signIn
 
@@ -82,16 +84,20 @@ class _MyAppState extends State<MyApp> {
       darkTheme: TAppTheme.darkTheme,
       themeMode: ThemeMode.light,
 
+      defaultTransition: Transition.leftToRightWithFade,
+      transitionDuration: const Duration(milliseconds: 500),
+
       // home:Open_page(),
-      // home: SplashScreen(),
+      // home: SplashScreen(),  // Always Run this
       // home: OnBoardingScreen(),
-      // home: FrontPage(),
       // home: ProfilePage(),
       // home: WelcomePage(),
 
       //--------------- Authorization --------------
 
-      home:  SignInController(),
+      // home: const CircularProgressIndicator(),
+
+      home: SignInController(),
       // home: Log_in(onClickedSignUp: toggle),
       // home: Sign_up(onClickedSignIn: toggle),
       // home: VerifyEmailPage(),
@@ -100,19 +106,16 @@ class _MyAppState extends State<MyApp> {
       // home: YourLocation(),
 
       // home: MainPage(),
+      //   home:  SalonDetail()
       // home: AppointmentDetails(),
 
-      // home: SalonDetail(),
-
-      // home: ProfileDetails(),
-      // home: photo(),
       // home: YourLocation(),
       // home: ProfilePage(),
 
       //--------------- MenuBar options for customer ---------------
-      // home: FavoriteSaloon(),
+      // home: FavoriteSalon(),
       // home: NotificationPage(),      //for owner & customer
-      // home: Appointment_detail(),
+      // home: MyAppointments(),
       // home: PrivacyPolicy(),
       // home: AboutUs(),
       // home: BookAppointment(),
@@ -122,29 +125,20 @@ class _MyAppState extends State<MyApp> {
       // home: AboutBarberShop(),
       // home: DateTimePage(),
 
-      // home: ProfileDetails(),
-      // home: Profile_Screen(),
-      // home: review(),
-
-      // home: Saloon_Mainpage_Container(),
-
-      // home: YourAppointment(),
+      // home: ProfilePage(),
+      // home: MyAppointments(),
 
       // home: OrderSummary(),
       // home: ReusableCardPage(),
-      // home: Profile_Screen(),
 
       //--------------- Owner ---------------
       // home: CustomerAppointmentDetails(),
       // home: CustomerAppointments(),
-
       // home: AppointmentDetails(),
-      // home: FavoriteSaloon(),
+      // home: FavoriteSalon(),
       // home: OrderSuccessfullyCompleted(),
       // home: PortfolioPictures(),
       // home:  Reviews(),
-
-      //----------- Es mei error hai--------------
       // home: Services(),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled6/models/salon_details_container.dart';
+import 'package:untitled6/models/salon_details_model.dart';
 
 import '2_order_summary.dart';
 

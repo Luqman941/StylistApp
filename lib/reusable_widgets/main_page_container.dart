@@ -60,7 +60,7 @@ class Main_Page_Custom_Container extends StatelessWidget {
                 ),
                 color: Colors.pink,
                 image: DecorationImage(
-                  image: AssetImage("assets/pic_three.jpeg"),
+                  image: AssetImage("assets/pic1.jpeg"),
                   fit: BoxFit.cover,
                 ),
               ),
