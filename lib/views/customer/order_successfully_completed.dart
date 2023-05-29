@@ -57,7 +57,7 @@ class _OrderSuccessfullyCompletedState extends State<OrderSuccessfullyCompleted>
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 20
                 ),
                 Container(
                   height: 60,
@@ -90,8 +90,9 @@ class _OrderSuccessfullyCompletedState extends State<OrderSuccessfullyCompleted>
                   ),
                 ),
                 const SizedBox(
-                  height: 15,
+                  height: 15
                 ),
+
                 Container(
                   height: 60,
                   decoration: BoxDecoration(

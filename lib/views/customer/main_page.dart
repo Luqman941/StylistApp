@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:untitled6/views/customer/customer_profile_screen.dart';
 
 import '../../constants/text_strings.dart';
+import '../../controller/authentication_repository/AuthenticationRepository.dart';
 import '../../utils/text_widget.dart';
 import '../navbar.dart';
 import 'salon_detail.dart';
@@ -22,7 +24,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const NavBar(),
+      drawer: NavBar(),
       appBar: AppBar(
         leading: const Icon(Icons.menu),
         title: const Text(tAppName),
@@ -41,15 +43,18 @@ class _MainPageState extends State<MainPage> {
                 Padding(
                   padding: const EdgeInsets.all(15),
                   child: Row(children: [
-                    Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage("assets/front_pic.jpeg"),
-                              fit: BoxFit.cover),
-                          border: Border.all(width: 1, color: Colors.black),
-                          shape: BoxShape.circle),
+                    GestureDetector(
+                      onTap: () => Get.to(() => const CustomerProfilePage()),
+                      child: Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage("assets/front_pic.jpeg"),
+                                fit: BoxFit.cover),
+                            border: Border.all(width: 1, color: Colors.black),
+                            shape: BoxShape.circle),
+                      ),
                     ),
                     const SizedBox(width: 15),
                     Column(
@@ -85,7 +90,9 @@ class _MainPageState extends State<MainPage> {
                   child: TextFormField(
                     decoration: InputDecoration(
                       icon: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+
+                          },
                           icon: const Icon(Icons.search_sharp)),
                       hintText: "Search",
                       border: InputBorder.none,
@@ -204,6 +211,7 @@ class _MainPageState extends State<MainPage> {
                   //  height:MediaQuery.of(context).size.height,
                   width: double.infinity,
                   child: ListView.builder(
+                    shrinkWrap: true,
                     itemCount: salonDetails.length,
                     physics: const BouncingScrollPhysics(),
                     itemBuilder: (context, index) => Padding(

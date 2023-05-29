@@ -122,9 +122,7 @@ class CustomerAppointmentDetails extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 35,
-                ),
+                const SizedBox(height: 35),
                 Container(
                   height: 60,
                   decoration: BoxDecoration(
@@ -136,15 +134,15 @@ class CustomerAppointmentDetails extends StatelessWidget {
                         left: 12, right: 12, top: 10, bottom: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
+                      children: const [
+                        Text(
                           "Date & Time",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        const Text(
+                        Text(
                           "Mon,12 Aug - 10:00 AM",
                           style: TextStyle(
                             fontSize: 20,
@@ -155,9 +153,7 @@ class CustomerAppointmentDetails extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
+                const SizedBox(height: 15),
                 Container(
                   height: 60,
                   decoration: BoxDecoration(
@@ -169,15 +165,15 @@ class CustomerAppointmentDetails extends StatelessWidget {
                         left: 15, right: 15, top: 10, bottom: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
+                      children: const [
+                        Text(
                           "Gender Type",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        const Text(
+                        Text(
                           "Man",
                           style: TextStyle(
                             fontSize: 20,
@@ -188,13 +184,9 @@ class CustomerAppointmentDetails extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
+                const SizedBox(height: 15),
                 const ReusableCardPage(),
-                const SizedBox(
-                  height: 15,
-                ),
+                const SizedBox(height: 15),
                 Row(
                   children: const [
                     Text(
@@ -214,9 +206,7 @@ class CustomerAppointmentDetails extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
+                const SizedBox(height: 15),
                 Row(
                   children: const [
                     Text(
@@ -236,9 +226,7 @@ class CustomerAppointmentDetails extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
+                const SizedBox(height: 15),
                 Row(
                   children: const [
                     Text(
@@ -293,9 +281,7 @@ class reuse extends StatelessWidget {
                       color: Colors.black54),
                 )
               : Container(),
-          const SizedBox(
-            width: 8,
-          ),
+          const SizedBox(width: 8),
           Text(
             textd,
             style: const TextStyle(

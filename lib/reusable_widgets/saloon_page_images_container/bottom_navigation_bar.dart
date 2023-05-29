@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled6/views/customer/profile_page.dart';
+import 'package:untitled6/views/customer/customer_profile_screen.dart';
 
 //import '../../welcome_page.dart';
 import '../../views/customer/favorite_salons.dart';
@@ -19,7 +19,7 @@ class _BottomState extends State<Bottom> {
     MainPage(),
     FavoriteSalon(),
     NotificationPage(),
-    ProfilePage(),
+    CustomerProfilePage(),
   ];
 
   @override

@@ -1,34 +1,41 @@
 {
   "project_info": {
-    "project_number": "717587561911",
-    "project_id": "stylist-app-5f2eb",
-    "storage_bucket": "stylist-app-5f2eb.appspot.com"
+    "project_number": "160001499255",
+    "project_id": "stylist-app-4a693",
+    "storage_bucket": "stylist-app-4a693.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:717587561911:android:37dc3f12d4c96a200f3c32",
+        "mobilesdk_app_id": "1:160001499255:android:4a76bf19f634cd868f6672",
         "android_client_info": {
           "package_name": "com.stylist.stylist"
         }
       },
       "oauth_client": [
         {
-          "client_id": "717587561911-7nrdcudv2ptd0971f4ts9m6gm6nck1nf.apps.googleusercontent.com",
+          "client_id": "160001499255-8ojg6qsdosteiu9vn64umg3su29t35vd.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBlAH2GDo8xoPjKCPBEGiM_OSJSdRVx98M"
+          "current_key": "AIzaSyCnqIsMAzro_2dfk8zU0Q-5w_1jbMvCP68"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "717587561911-7nrdcudv2ptd0971f4ts9m6gm6nck1nf.apps.googleusercontent.com",
+              "client_id": "160001499255-8ojg6qsdosteiu9vn64umg3su29t35vd.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "160001499255-m4geo3p79fi6o3ikb6tavc4639l7sq6u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.stylist.stylist"
+              }
             }
           ]
         }

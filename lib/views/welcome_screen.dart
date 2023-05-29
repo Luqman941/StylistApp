@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled6/views/auth/log_in.dart';
-
-import 'package:firebase_core/firebase_core.dart';
 
 import '../utils/text_widget.dart';
+import 'auth/log_in.dart';
 import 'auth/sign_up.dart';
 
-class WelcomePage extends StatefulWidget {
-  const WelcomePage({Key? key}) : super(key: key);
+class WelcomeScreen extends StatefulWidget {
+  const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<WelcomePage> createState() => _WelcomePageState();
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
-class _WelcomePageState extends State<WelcomePage> {
+class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     bool isLogin = true;
@@ -39,17 +37,19 @@ class _WelcomePageState extends State<WelcomePage> {
               ElevatedButton(
                 // Style property is defined in Elevated button theme class
                 child: const Text(
-                  'Register as an Owner',
+                  'LOG IN',
                   style: TextStyle(fontSize: 20),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(() => Log_in());
+                },
               ),
               const SizedBox(height: 30),
 
               ElevatedButton(
                 // Style property is defined in Elevated button theme class
                 child: const Text(
-                  'Register as a Customer',
+                  'SIGN UP',
                   style: TextStyle(fontSize: 20),
                 ),
                 onPressed: () {

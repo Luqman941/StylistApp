@@ -1,40 +1,43 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled6/views/my_profile.dart';
 
+import '../../controller/authentication_repository/AuthenticationRepository.dart';
 import '../../controller/sign_in_controller.dart';
 import '../auth/forgot_password.dart';
+import '../welcome_screen.dart';
 import '1_My_appointments.dart';
 import '../about_us.dart';
 
 import 'package:untitled6/views/privacy_policy.dart';
-import '3_appointment_details.dart';
+import '4_customer_profile.dart';
 import 'favorite_salons.dart';
 import 'package:untitled6/models/profile_screen.dart';
 import '../notification_page.dart';
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+class CustomerProfilePage extends StatefulWidget {
+  const CustomerProfilePage({Key? key}) : super(key: key);
 
   @override
-  State<ProfilePage> createState() => _ProfilePageState();
+  State<CustomerProfilePage> createState() => _CustomerProfilePageState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _CustomerProfilePageState extends State<CustomerProfilePage> {
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser!; //Access user from firebase
 
     return Scaffold(
+      // appBar: AppBar(
+      //   leading: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios_new),),
+      //   title: Text("Profile", style: Theme.of(context).textTheme.headline2,),
+      // ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
             child: Column(
               children: [
-                SizedBox(
-                  height: 25,
-                ),
+                const SizedBox(height: 25),
                 Center(
                   child: Column(
                     children: [
@@ -51,58 +54,35 @@ class _ProfilePageState extends State<ProfilePage> {
                                   fit: BoxFit.cover),
                             ),
                           ),
-                          Positioned(
-                            bottom: 2,
-                            right: 0,
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: Container(
-                                height: 30,
-                                width: 30,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color(0xffE0C3F6),
-                                ),
-                                child: Icon(
-                                  Icons.camera_alt_outlined,
-                                  size: 19,
-                                ),
-                              ),
-                            ),
-                          ),
                         ],
                       ),
-                      SizedBox(
-                        height: 7,
-                      ),
+                      const SizedBox(height: 7),
                       Text(
                         "Afaq Ahmad",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
-                            fontSize: 15),
+                            fontSize: 20),
                       ),
-                      SizedBox(
-                        height: 7,
-                      ),
+                      const SizedBox(height: 7),
                       Text(
-                        user.email!,  //Email from firebase
-                        style: TextStyle(
+                        user.email!, //Email from firebase
+                        style: const TextStyle(
                             color: Colors.grey,
                             fontWeight: FontWeight.bold,
-                            fontSize: 11),
+                            fontSize: 14),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 12.0),
                   child: Container(
                     height: 500,
                     width: double.infinity,
                     child: ListView.builder(
-                      physics: BouncingScrollPhysics(),
+                      physics: const BouncingScrollPhysics(),
                       scrollDirection: Axis.vertical,
                       itemCount: model.length,
                       itemBuilder: (context, index) => Row(
@@ -121,16 +101,14 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            width: 10,
-                          ),
+                          const SizedBox(width: 10),
                           Text(
                             model[index].myText,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           IconButton(
                             onPressed: () {
                               Navigator.push(
@@ -139,11 +117,12 @@ class _ProfilePageState extends State<ProfilePage> {
                                     builder: (context) => model[index].myClass,
                                   ));
 
-                              if(model[index].myText == "Log Out"){
-                                FirebaseAuth.instance.signOut();
+                              if (model[index].myText == "Log Out") {
+                                AuthenticationRepository.instance.logout();
+                                // FirebaseAuth.instance.signOut();
                               }
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.arrow_forward_ios_sharp,
                               color: Colors.black,
                             ),
@@ -163,69 +142,68 @@ class _ProfilePageState extends State<ProfilePage> {
 
   List<dynamic> model = [
     ProfileScreen(
-        myClass: MyProfile(),
+        myClass: const CustomerProfile(),
         myText: "My Profile",
-        icon: Icon(
+        icon: const Icon(
           Icons.person,
           color: Colors.black,
         ),
-        color: Color(0xff61C0BF)),
+        color: const Color(0xff61C0BF)),
     ProfileScreen(
-        myClass: MyAppointments(),
+        myClass: const MyAppointments(),
         myText: "Appointment details",
-        icon: Icon(
+        icon: const Icon(
           Icons.bookmark_border,
           color: Colors.black,
         ),
-        color: Color(0xffFCC5B3)),
+        color: const Color(0xffFCC5B3)),
     ProfileScreen(
-        myClass: FavoriteSalon(),
+        myClass: const FavoriteSalon(),
         myText: "Favorite Saloons",
-        icon: Icon(
+        icon: const Icon(
           Icons.favorite_border,
           color: Colors.black,
         ),
-        color: Color(0xff61C0BF)),
+        color: const Color(0xff61C0BF)),
     ProfileScreen(
-        myClass: NotificationPage(),
-        myText: "Notificatons",
-        icon: Icon(
+        myClass: const NotificationPage(),
+        myText: "Notifications",
+        icon: const Icon(
           Icons.notifications_outlined,
           color: Colors.black,
         ),
-        color: Color(0xffE0C3F6)),
+        color: const Color(0xffE0C3F6)),
     ProfileScreen(
-        myClass: ForgotPassword(),
+        myClass: const ForgotPassword(),
         myText: "Change Password",
-        icon: Icon(
+        icon: const Icon(
           Icons.lock_outline_sharp,
           color: Colors.black,
         ),
-        color: Color(0xffFCC5B3)),
+        color: const Color(0xffFCC5B3)),
     ProfileScreen(
-        myClass: PrivacyPolicy(),
+        myClass: const PrivacyPolicy(),
         myText: "Privacy Policy",
-        icon: Icon(
+        icon: const Icon(
           Icons.privacy_tip_outlined,
           color: Colors.black,
         ),
-        color: Color(0xff61C0BF)),
+        color: const Color(0xff61C0BF)),
     ProfileScreen(
-        myClass: AboutUs(),
+        myClass: const AboutUs(),
         myText: "About Us",
-        icon: Icon(
+        icon: const Icon(
           Icons.info_outline_rounded,
           color: Colors.black,
         ),
-        color: Color(0xffE0C3F6)),
+        color: const Color(0xffE0C3F6)),
     ProfileScreen(
-        myClass: SignInController(),
+        myClass: const WelcomeScreen(),
         myText: "Log Out",
-        icon: Icon(
+        icon: const Icon(
           Icons.login,
-          color: Colors.black,
+          color: Colors.redAccent,
         ),
-        color: Color(0xffFCC5B3)
-   ),
+        color: const Color(0xffFCC5B3)),
   ];
 }

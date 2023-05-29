@@ -44,7 +44,7 @@ class _OrderBookingState extends State<OrderBooking> {
                 ],
               ),
               const SizedBox(
-                height: 15,
+                height: 15
               ),
               Container(
                 height: 110,
@@ -155,7 +155,7 @@ class _OrderBookingState extends State<OrderBooking> {
                 ),
               ),
               const SizedBox(
-                height: 35,
+                height: 35
               ),
               Container(
                 height: 60,
@@ -188,7 +188,7 @@ class _OrderBookingState extends State<OrderBooking> {
                 ),
               ),
               const SizedBox(
-                height: 15,
+                height: 15
               ),
               Container(
                 height: 60,

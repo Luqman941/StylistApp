@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:untitled6/views/customer/3_appointment_details.dart';
 
 
-class timing extends StatelessWidget {
-  const timing({Key? key}) : super(key: key);
+class Timing extends StatelessWidget {
+  const Timing({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

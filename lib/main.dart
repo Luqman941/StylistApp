@@ -2,18 +2,27 @@ import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:untitled6/utils/theme/theme.dart';
+import 'package:untitled6/views/customer/5_update_cust_profile.dart';
+import 'package:untitled6/views/owner/fill_details.dart';
+import 'package:untitled6/views/owner/owner_profile_screen.dart';
+import 'package:untitled6/views/owner/timing.dart';
 
 import 'package:untitled6/views/splash_screen.dart';
 import 'package:untitled6/views/customer/date_time_page.dart';
 import 'package:untitled6/views/owner/customer_appointments.dart';
 import 'package:untitled6/views/owner/customer_appointment_details.dart';
 import 'controller/sign_in_controller.dart';
+import 'firebase_options.dart';
 import 'open_page.dart';
 import 'utils/utils_error.dart';
+import 'views/customer/4_customer_profile.dart';
 import 'views/customer/order_successfully_completed.dart';
 
 import 'package:untitled6/views/customer/portfolio_pictures.dart';
-import 'views/owner/edit_owner_profile.dart';
+import 'views/owner/4_owner_profile.dart';
+import 'views/owner/5_update_owner_profile.dart';
+import 'views/owner/add_services.dart';
+import 'views/owner/salon_portfolio.dart';
 import 'views/privacy_policy.dart';
 import 'package:untitled6/views/review.dart';
 
@@ -32,8 +41,7 @@ import 'views/auth/forgot_password.dart';
 import 'views/on_boarding_screens.dart';
 import 'views/customer/main_page.dart';
 import 'views/notification_page.dart';
-import 'views/my_profile.dart';
-import 'views/customer/profile_page.dart';
+import 'views/customer/customer_profile_screen.dart';
 import 'reusable_widgets/saloon_mainpage_container.dart';
 import 'reusable_widgets/reusable_card_page.dart';
 
@@ -53,8 +61,8 @@ import 'views/services.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-      // .then((value) => Get.put(AuthenticationRepository()));
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)      //option: DefaultFirebaseOptions.currentPlatform
+      .then((value) => Get.put(AuthenticationRepository()));
 
   runApp(const MyApp());
 }
@@ -78,26 +86,24 @@ class _MyAppState extends State<MyApp> {
       scaffoldMessengerKey: Utils.messengerKey, //It is used in utils
       navigatorKey: navigatorKey, //It is used in signIn
 
-      debugShowCheckedModeBanner: false,
-
+      themeMode: ThemeMode.light,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      themeMode: ThemeMode.light,
 
+      debugShowCheckedModeBanner: false,
       defaultTransition: Transition.leftToRightWithFade,
       transitionDuration: const Duration(milliseconds: 500),
 
-      // home:Open_page(),
       // home: SplashScreen(),  // Always Run this
+      // home:Open_page(),
       // home: OnBoardingScreen(),
       // home: ProfilePage(),
       // home: WelcomePage(),
+      // home: WelcomeScreen(),
 
       //--------------- Authorization --------------
-
-      // home: const CircularProgressIndicator(),
-
-      home: SignInController(),
+      home: Sign_up(),
+      // home: SignInController(),
       // home: Log_in(onClickedSignUp: toggle),
       // home: Sign_up(onClickedSignIn: toggle),
       // home: VerifyEmailPage(),
@@ -106,11 +112,9 @@ class _MyAppState extends State<MyApp> {
       // home: YourLocation(),
 
       // home: MainPage(),
-      //   home:  SalonDetail()
+      // home:  SalonDetail()
       // home: AppointmentDetails(),
 
-      // home: YourLocation(),
-      // home: ProfilePage(),
 
       //--------------- MenuBar options for customer ---------------
       // home: FavoriteSalon(),
@@ -120,26 +124,33 @@ class _MyAppState extends State<MyApp> {
       // home: AboutUs(),
       // home: BookAppointment(),
 
+      //--------------- Customer ---------------
+      // home: CustomerProfile(),
+      // home: UpdateCustomerProfile(),
       // home: OrderBooking(),
       // home: PaymentMethod(),
       // home: AboutBarberShop(),
       // home: DateTimePage(),
 
-      // home: ProfilePage(),
       // home: MyAppointments(),
 
+      // home: PortfolioPictures(),
       // home: OrderSummary(),
       // home: ReusableCardPage(),
 
       //--------------- Owner ---------------
+      // home: OwnerProfilePage(),
+      // home: OwnerProfile(),
+      // home: add_services(),
       // home: CustomerAppointmentDetails(),
       // home: CustomerAppointments(),
       // home: AppointmentDetails(),
-      // home: FavoriteSalon(),
+      // home: fill_details(),
       // home: OrderSuccessfullyCompleted(),
-      // home: PortfolioPictures(),
+      // home: SalonPortfolio(),
       // home:  Reviews(),
       // home: Services(),
+      // home: Timing(),
     );
   }
 }

@@ -7,10 +7,10 @@ import '../controller/sign_in_controller.dart';
 import 'about_us.dart';
 import 'auth/forgot_password.dart';
 import 'customer/1_My_appointments.dart';
+import 'customer/4_customer_profile.dart';
 import 'customer/favorite_salons.dart';
 import 'notification_page.dart';
 import 'privacy_policy.dart';
-import 'my_profile.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -62,7 +62,7 @@ class NavBar extends StatelessWidget {
               Navigator.pop(context);
 
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const MyProfile(),
+                builder: (context) => const CustomerProfile(),
               ));
             },
           ),
@@ -142,9 +142,9 @@ class NavBar extends StatelessWidget {
             title: const Text('Log Out'),
             onTap: () {
 
-              FirebaseAuth.instance.signOut();
+              // FirebaseAuth.instance.signOut();
 
-              // AuthenticationRepository.instance.logout();
+              AuthenticationRepository.instance.logout();
               Get.offAll(()=> SignInController());
 
               // Navigator.pop(context);

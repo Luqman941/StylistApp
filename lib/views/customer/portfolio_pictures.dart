@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'date_time_page.dart';
 
 class PortfolioPictures extends StatefulWidget {
   const PortfolioPictures({Key? key}) : super(key: key);
@@ -9,8 +12,6 @@ class PortfolioPictures extends StatefulWidget {
 
 class _PortfolioPicturesState extends State<PortfolioPictures> {
   List items = [
-    'assets/favoriteSalon.png',
-    'assets/favoriteSalon.png',
     'assets/favoriteSalon.png',
     'assets/favoriteSalon.png',
     'assets/favoriteSalon.png',
@@ -41,19 +42,27 @@ class _PortfolioPicturesState extends State<PortfolioPictures> {
                       fit: BoxFit.fill,
                     );
                   }),
-              SizedBox(
-                height: 30,
+              const SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () => Get.to(() => const DateTimePage()),
+                child: const Text(
+                  "Book Now",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20),
+                ),
               ),
               Container(
                 height: 50,
                 width: double.infinity,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(28),
-                    color: Color(0xff4D9DD0),
+                    color: const Color(0xff4D9DD0),
                     border: Border.all(width: 2, color: Colors.black)),
                 child: TextButton(
-                  onPressed: () {},
-                  child: Text(
+                  onPressed: () => Get.to(() => const DateTimePage()),
+                  child: const Text(
                     "Book Now",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
