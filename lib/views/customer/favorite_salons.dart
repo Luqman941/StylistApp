@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:untitled6/models/salon_details_model.dart';
 import '../notification_page.dart';
 import 'salon_detail.dart';
@@ -21,7 +23,7 @@ class _FavoriteSalonState extends State<FavoriteSalon> {
         elevation: 0,
         leading: GestureDetector(
             onTap: () {
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => ,));
+              Get.back();
             },
             child: const Icon(
               Icons.arrow_back_ios_new,

@@ -28,15 +28,18 @@ class _SalonDetailState extends State<SalonDetail>
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: const [
+              children: [
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 50, horizontal: 20),
                   child: CircleAvatar(
                     child: ClipOval(
-                      child: Icon(
-                        Icons.favorite,
-                        color: Colors.white,
-                        size: 30,
+                      child: GestureDetector(
+                        // onTap: Get.to(()=> const ),
+                        child: const Icon(
+                          Icons.favorite,
+                          color: Colors.white,
+                          size: 30,
+                        ),
                       ),
                     ),
                   ),
@@ -45,15 +48,18 @@ class _SalonDetailState extends State<SalonDetail>
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: const [
+              children:  [
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 100, horizontal: 20),
                   child: CircleAvatar(
                     child: ClipOval(
-                      child: Icon(
-                        Icons.share_rounded,
-                        color: Colors.white,
-                        size: 30,
+                      child: GestureDetector(
+                        // onTap: Get.to(()=> const ),
+                        child: const Icon(
+                          Icons.share_rounded,
+                          color: Colors.white,
+                          size: 30,
+                        ),
                       ),
                     ),
                   ),
@@ -62,15 +68,18 @@ class _SalonDetailState extends State<SalonDetail>
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: const [
+              children:  [
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 150, horizontal: 20),
                   child: CircleAvatar(
                     child: ClipOval(
-                      child: Icon(
-                        Icons.phone,
-                        color: Colors.white,
-                        size: 30,
+                      child: GestureDetector(
+                        // onTap: Get.to(()=> const ),
+                        child: const Icon(
+                          Icons.phone,
+                          color: Colors.white,
+                          size: 30,
+                        ),
                       ),
                     ),
                   ),

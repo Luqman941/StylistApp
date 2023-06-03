@@ -15,7 +15,6 @@ class _PortfolioPicturesState extends State<PortfolioPictures> {
     'assets/favoriteSalon.png',
     'assets/favoriteSalon.png',
     'assets/favoriteSalon.png',
-    'assets/favoriteSalon.png',
   ];
   @override
   Widget build(BuildContext context) {
@@ -51,24 +50,6 @@ class _PortfolioPicturesState extends State<PortfolioPictures> {
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                       fontSize: 20),
-                ),
-              ),
-              Container(
-                height: 50,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(28),
-                    color: const Color(0xff4D9DD0),
-                    border: Border.all(width: 2, color: Colors.black)),
-                child: TextButton(
-                  onPressed: () => Get.to(() => const DateTimePage()),
-                  child: const Text(
-                    "Book Now",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 20),
-                  ),
                 ),
               ),
             ],

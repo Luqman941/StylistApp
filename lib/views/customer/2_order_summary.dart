@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 import 'payment_method.dart';
 import 'package:untitled6/reusable_widgets/reusable_card_page.dart';
@@ -15,6 +16,7 @@ class _OrderSummaryState extends State<OrderSummary> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(title: ,),
       body: SingleChildScrollView(
         child: SafeArea(
             child: Padding(
@@ -75,8 +77,7 @@ class _OrderSummaryState extends State<OrderSummary> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     image: const DecorationImage(
-                                        image: AssetImage(
-                                            "assets/style1.jpeg"),
+                                        image: AssetImage("assets/style1.jpeg"),
                                         fit: BoxFit.cover)),
                               ),
                               Padding(
@@ -187,10 +188,7 @@ class _OrderSummaryState extends State<OrderSummary> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 15
-              ),
-
+              const SizedBox(height: 15),
               Container(
                 height: 60,
                 decoration: BoxDecoration(
@@ -221,15 +219,9 @@ class _OrderSummaryState extends State<OrderSummary> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 15
-              ),
-
+              const SizedBox(height: 15),
               const ReusableCardPage(),
-              const SizedBox(
-                height: 15
-              ),
-
+              const SizedBox(height: 15),
               Row(
                 children: const [
                   Text(
@@ -249,18 +241,12 @@ class _OrderSummaryState extends State<OrderSummary> {
                   )
                 ],
               ),
-              const SizedBox(
-                height: 10
-              ),
-
+              const SizedBox(height: 10),
               const Divider(
                 color: Colors.black12,
                 thickness: 1,
               ),
-              const SizedBox(
-                height: 8
-              ),
-
+              const SizedBox(height: 8),
               Row(
                 children: const [
                   Text("Coupon Discount",
@@ -279,10 +265,7 @@ class _OrderSummaryState extends State<OrderSummary> {
                   )
                 ],
               ),
-              const SizedBox(
-                height: 10
-              ),
-
+              const SizedBox(height: 10),
               const Divider(
                 thickness: 1,
                 color: Colors.black12,
@@ -304,39 +287,18 @@ class _OrderSummaryState extends State<OrderSummary> {
                   )
                 ],
               ),
-              const SizedBox(
-                height: 35
-              ),
-
-              GestureDetector(
-                onTap: () {
-                  showSlidingBottomSheet(context, builder: (context) {
-                    return SlidingSheetDialog(
-                        controller: _controller,
-                        elevation: 8,
-                        cornerRadius: 20,
-                        builder: (context, state) {
-                          return const PaymentMethod();
-                        });
-                  });
-                },
-                child: Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                      color: Colors.blue.withOpacity(.3),
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.black, width: 1)),
-                  child: const Center(
-                    child: Text(
-                      "Continue",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white),
-                    ),
-                  ),
+              const SizedBox(height: 35),
+              ElevatedButton(
+                onPressed: () => Get.to(() => const PaymentMethod()),
+                child: const Text(
+                  "Continue",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20),
                 ),
               ),
+
             ],
           ),
         )),

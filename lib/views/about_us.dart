@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 
 class AboutUs extends StatelessWidget {
   const AboutUs({Key? key}) : super(key: key);
@@ -8,9 +10,12 @@ class AboutUs extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: const Icon(
-          Icons.arrow_back_ios_new,
-          color: Colors.black,
+        leading: GestureDetector(
+          onTap: ()=> Get.back(),
+          child: const Icon(
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
+          ),
         ),
         title: const Text('About us', style: TextStyle(color: Colors.black)),
         elevation: 0,

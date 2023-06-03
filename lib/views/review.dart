@@ -24,7 +24,7 @@ class _ReviewsState extends State<Reviews> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4.0),
           child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -72,8 +72,8 @@ class _ReviewsState extends State<Reviews> {
                                   unratedColor: Colors.grey,
                                   itemCount: 5,
                                   itemSize: 20.0,
-                                  itemPadding:
-                                      EdgeInsets.symmetric(horizontal: 2.0),
+                                  itemPadding: const EdgeInsets.symmetric(
+                                      horizontal: 2.0),
                                   updateOnDrag: true,
                                   itemBuilder: (context, index) => Icon(
                                     Icons.star,
@@ -229,9 +229,7 @@ class _ReviewsState extends State<Reviews> {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 40,
-                ),
+                const SizedBox(height: 40),
                 Container(
                   padding: const EdgeInsets.all(18.0),
                   decoration: BoxDecoration(
@@ -288,18 +286,19 @@ class _ReviewsState extends State<Reviews> {
                               )
                             ],
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text("31 min ago")
                         ],
                       ),
-                      Text(
-                          "we,re really grateful and appreciate you good work for every facility"),
+                      Padding(
+                        padding: EdgeInsets.all(10),
+                        child: Text(
+                            "we,re really grateful and appreciate you good work for every facility"),
+                      ),
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 40,
-                ),
+                const SizedBox(height: 40),
                 Container(
                   padding: const EdgeInsets.all(18.0),
                   decoration: BoxDecoration(
@@ -318,8 +317,7 @@ class _ReviewsState extends State<Reviews> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
-                                  image:
-                                      AssetImage("assets/container_Img.png"),
+                                  image: AssetImage("assets/container_Img.png"),
                                   fit: BoxFit.cover),
                               border: Border.all(width: 2, color: Colors.black),
                             ),
@@ -357,243 +355,16 @@ class _ReviewsState extends State<Reviews> {
                               )
                             ],
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text("40 min ago")
                         ],
                       ),
-                      Text(
-                          'I love your hair styles.I hope to see you again very soon.best of luck'),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                Container(
-                  padding: const EdgeInsets.all(18.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 50,
-                            width: 70,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                  image: AssetImage("assets/style1.jpeg"),
-                                  fit: BoxFit.cover),
-                              border: Border.all(width: 2, color: Colors.black),
-                            ),
-                          ),
-                          Column(
-                            children: [
-                              Text('Asif Gul',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w900,
-                                    fontSize: 15,
-                                  )),
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.grey,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                          Spacer(),
-                          Text("45 min ago")
-                        ],
+                      Padding(
+                        padding: EdgeInsets.all(10),
+                        child: Text(
+                            'I love your hair styles.I hope to see you again very soon.best of luck'),
                       ),
-                      Text(" Great work Thank you so much for services!!!!!"),
                     ],
-                  ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                Container(
-                  padding: const EdgeInsets.all(18.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 50,
-                            width: 70,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                  image:
-                                      AssetImage("assets/style2.jpeg"),
-                                  fit: BoxFit.cover),
-                              border: Border.all(width: 2, color: Colors.black),
-                            ),
-                          ),
-                          Column(
-                            children: [
-                              Text('Irfan',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w900,
-                                    fontSize: 15,
-                                  )),
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.grey,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                          Spacer(),
-                          Text("45 min ago")
-                        ],
-                      ),
-                      Text("Excellent job,Thank you so much sir"),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                Container(
-                  padding: const EdgeInsets.all(16.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 50,
-                            width: 70,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                  image: AssetImage("assets/front_pic.jpeg"),
-                                  fit: BoxFit.cover),
-                              border: Border.all(width: 2, color: Colors.black),
-                            ),
-                          ),
-                          Column(
-                            children: [
-                              Text('Afaq Habib',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w900,
-                                    fontSize: 15,
-                                  )),
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.grey,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                          Spacer(),
-                          Text("31 min ago")
-                        ],
-                      ),
-                      Text(
-                          "we,re really grateful and appreciate you good work for every facility"),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                Container(
-                  height: 50,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(28),
-                      color: Color(0xff4D9DD0),
-                      border: Border.all(width: 2, color: Colors.black)),
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => DateTimePage(),
-                        ),
-                      );
-                    },
-                    child: Text(
-                      "Book Now",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 20),
-                    ),
                   ),
                 ),
               ],

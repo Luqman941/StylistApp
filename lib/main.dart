@@ -94,7 +94,7 @@ class _MyAppState extends State<MyApp> {
       defaultTransition: Transition.leftToRightWithFade,
       transitionDuration: const Duration(milliseconds: 500),
 
-      // home: SplashScreen(),  // Always Run this
+      home: SplashScreen(),  // Always Run this
       // home:Open_page(),
       // home: OnBoardingScreen(),
       // home: ProfilePage(),
@@ -102,7 +102,7 @@ class _MyAppState extends State<MyApp> {
       // home: WelcomeScreen(),
 
       //--------------- Authorization --------------
-      home: Sign_up(),
+      // home: Sign_up(),
       // home: SignInController(),
       // home: Log_in(onClickedSignUp: toggle),
       // home: Sign_up(onClickedSignIn: toggle),

@@ -179,28 +179,16 @@ class _ServicesState extends State<Services> {
               ),
             ),
             const SizedBox(height: 20,),
-            InkWell(
-              onTap: (){
-                Get.to(const DateTimePage());
-              },
-              child: Container(
-                height: 60,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.blue.withOpacity(.3),
-                  border: Border.all(color: Colors.black,width: 1),
-                ),
-                alignment: Alignment.center,
+             ElevatedButton(
+                onPressed: () => Get.to(() => const DateTimePage()),
                 child: const Text(
-                  "Book Now",style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-                ),
+                  "Book Now",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20),
                 ),
               ),
-            ),
           ],
         ),
       )

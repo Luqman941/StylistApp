@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:untitled6/models/expantion_model.dart';
+
+import 'date_time_page.dart';
 
 class AboutBarberShop extends StatefulWidget {
   const AboutBarberShop({Key? key}) : super(key: key);
@@ -228,23 +231,16 @@ class _AboutBarberShopState extends State<AboutBarberShop> {
               ),
             ),
             const SizedBox(height: 20,),
-            Container(
-              height: 60,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.blue.withOpacity(.3),
-                border: Border.all(color: Colors.black,width: 1),
-              ),
-              alignment: Alignment.center,
+            ElevatedButton(
+              onPressed: () => Get.to(() => const DateTimePage()),
               child: const Text(
-                "Book Now",style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
+                "Book Now",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 20),
               ),
-              ),
-            )
+            ),
           ],
         ),
       )

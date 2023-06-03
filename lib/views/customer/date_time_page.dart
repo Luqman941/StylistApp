@@ -34,22 +34,21 @@ class _DateTimePageState extends State<DateTimePage> {
             children: [
               Row(
                 children: [
-                  Icon(
-                    Icons.arrow_back_ios_new,
-                    size: 20,
+                  GestureDetector(
+                    onTap: () => Get.back(),
+                    child: const Icon(
+                      Icons.arrow_back_ios_new,
+                      size: 20,
+                    ),
                   ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
+                  const SizedBox(width: 20),
+                  const Text(
                     "Select Date & Time",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   )
                 ],
               ),
-              SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -59,15 +58,18 @@ class _DateTimePageState extends State<DateTimePage> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(color: Colors.black, width: 1)),
-                    child: const Center(
-                      child: Icon(
-                        Icons.arrow_back_ios_new,
-                        size: 20,
+                    child: Center(
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Icon(
+                          Icons.arrow_back_ios_new,
+                          size: 20,
+                        ),
                       ),
                     ),
                   ),
                   const Text(
-                    "August 2022",
+                    "june 2022",
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
@@ -81,18 +83,19 @@ class _DateTimePageState extends State<DateTimePage> {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(color: Colors.black, width: 1)),
                     child: Center(
-                      child: Icon(
-                        Icons.arrow_forward_ios,
-                        size: 20,
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.arrow_forward_ios,
+                          size: 20,
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
+              const SizedBox(height: 20),
+              SizedBox(
                 height: 100,
                 child: DatePicker(
                   DateTime.now(),
@@ -110,9 +113,7 @@ class _DateTimePageState extends State<DateTimePage> {
                   },
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               const Divider(
                 indent: 10,
                 endIndent: 10,
@@ -128,7 +129,7 @@ class _DateTimePageState extends State<DateTimePage> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     height: 8,
                     width: 8,
@@ -138,9 +139,7 @@ class _DateTimePageState extends State<DateTimePage> {
                       border: Border.all(color: Colors.black, width: 1),
                     ),
                   ),
-                  const SizedBox(
-                    width: 5,
-                  ),
+                  const SizedBox(width: 5),
                   const Text(
                     "Available",
                     style: TextStyle(
@@ -148,9 +147,7 @@ class _DateTimePageState extends State<DateTimePage> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  SizedBox(
-                    width: 8,
-                  ),
+                  const SizedBox(width: 8),
                   Container(
                     height: 8,
                     width: 8,
@@ -160,10 +157,8 @@ class _DateTimePageState extends State<DateTimePage> {
                       //border: Border.all(color: Colors.black,width: 1),
                     ),
                   ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text(
+                  const SizedBox(width: 5),
+                  const Text(
                     "Booked",
                     style: TextStyle(
                         fontSize: 15,
@@ -172,27 +167,18 @@ class _DateTimePageState extends State<DateTimePage> {
                   )
                 ],
               ),
-              Spacer(),
-              GestureDetector(
-                  onTap: () {
-                    Get.to(AppointmentDetails());
-                  },
-                  child: Container(
-                    height: 50,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.blue.withOpacity(.5),
-                        border: Border.all(color: Colors.black, width: 1)),
-                    child: Center(
-                      child: Text(
-                        "Continue",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white),
-                      ),
-                    ),
-                  )),
+              const Spacer(),
+              ElevatedButton(
+                onPressed: () => Get.to(() => const AppointmentDetails()),
+                child: const Text(
+                  "Continue",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20),
+                ),
+              ),
+              const SizedBox(width: 5),
             ],
           ),
         ),

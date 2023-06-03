@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class NotificationPage extends StatelessWidget {
         elevation: 0,
         leading: GestureDetector(
             onTap: () {
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => ,));
+              Get.back();
             },
             child: const Icon(
               Icons.arrow_back_ios_new,
@@ -44,13 +45,13 @@ class NotificationPage extends StatelessWidget {
               Expanded(
                 child: ListView.builder(
                   itemCount: 5,
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) => Padding(
                     padding: const EdgeInsets.only(bottom: 8.0),
                     child: GestureDetector(
                       onTap: () {
-                        // Navigator.push(context,
-                        //     MaterialPageRoute(builder: (context) =>,));
+
+                        // Get.to(()=> const )
                       },
                       child: Row(
                         children: [
@@ -76,7 +77,7 @@ class NotificationPage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: const [
                                 Text(
-                                  "Your Order Conform",
+                                  "Your Order Confirm",
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
@@ -102,7 +103,7 @@ class NotificationPage extends StatelessWidget {
                                   border:
                                       Border.all(width: 2, color: Colors.black),
                                   shape: BoxShape.circle,
-                                  color: Color(0xff61C0BF)),
+                                  color: const Color(0xff61C0BF)),
                             ),
                           ),
                         ],

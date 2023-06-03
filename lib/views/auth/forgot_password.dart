@@ -40,7 +40,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Get.to(() => const Log_in());
+                        Get.back();
                       },
                       child: const Icon(
                         Icons.arrow_back_ios_new,

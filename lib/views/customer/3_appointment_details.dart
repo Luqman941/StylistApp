@@ -210,10 +210,8 @@ class AppointmentDetails extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 15),
-
                 const ReusableCardPage(),
                 const SizedBox(height: 15),
-
                 Row(
                   children: const [
                     Text(
@@ -233,19 +231,13 @@ class AppointmentDetails extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 8
-                ),
-
+                const SizedBox(height: 8),
                 const Text("Coupon Code",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
                     )),
-                const SizedBox(
-                  height: 10
-                ),
-
+                const SizedBox(height: 10),
                 TextFormField(
                   keyboardType: const TextInputType.numberWithOptions(),
                   decoration: InputDecoration(
@@ -274,28 +266,15 @@ class AppointmentDetails extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       )),
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Get.to(const OrderSummary());
-                  },
-                  child: Container(
-                    height: 50,
-                    decoration: BoxDecoration(
-                        color: Colors.blue.withOpacity(.3),
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.black, width: 1)),
-                    child: const Center(
-                      child: Text(
-                        "Continue",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white),
-                      ),
-                    ),
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () => Get.to(() => const OrderSummary()),
+                  child: const Text(
+                    "Continue",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20),
                   ),
                 ),
               ],
